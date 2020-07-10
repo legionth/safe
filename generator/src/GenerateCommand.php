@@ -10,7 +10,7 @@ use Symfony\Component\Process\Process;
 
 class GenerateCommand extends Command
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('generate')
@@ -30,7 +30,7 @@ class GenerateCommand extends Command
 
         /** @var Method[] $functions */
         /** @var string[] $overloadedFunctions */
-        ['functions' => $functions,'overloadedFunctions' => $overloadedFunctions] = $scanner->getMethods($paths);
+        list('functions' => $functions,'overloadedFunctions' => $overloadedFunctions) = $scanner->getMethods($paths);
 
         $output->writeln('These functions have been ignored and must be dealt with manually: '.\implode(', ', $overloadedFunctions));
 
@@ -79,7 +79,7 @@ class GenerateCommand extends Command
         return 0;
     }
 
-    private function rmGenerated(): void
+    private function rmGenerated()
     {
         $exceptions = \glob(__DIR__.'/../../generated/Exceptions/*.php');
         if ($exceptions === false) {
@@ -104,7 +104,7 @@ class GenerateCommand extends Command
         }
     }
 
-    private function runCsFix(OutputInterface $output): void
+    private function runCsFix(OutputInterface $output)
     {
         $process = new Process(['vendor/bin/phpcbf'], __DIR__.'/../..');
         $process->setTimeout(600);

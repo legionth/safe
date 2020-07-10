@@ -11,7 +11,7 @@ use Safe\Exceptions\SemException;
  * @throws SemException
  *
  */
-function msg_queue_exists(int $key): void
+function msg_queue_exists(int $key)
 {
     error_clear_last();
     $result = \msg_queue_exists($key);
@@ -92,7 +92,7 @@ function msg_queue_exists(int $key): void
  * @throws SemException
  *
  */
-function msg_receive($queue, int $desiredmsgtype, ?int &$msgtype, int $maxsize, &$message, bool $unserialize = true, int $flags = 0, ?int &$errorcode = null): void
+function msg_receive($queue, int $desiredmsgtype, &$msgtype, int $maxsize, &$message, bool $unserialize = true, int $flags = 0, &$errorcode = null)
 {
     error_clear_last();
     $result = \msg_receive($queue, $desiredmsgtype, $msgtype, $maxsize, $message, $unserialize, $flags, $errorcode);
@@ -112,7 +112,7 @@ function msg_receive($queue, int $desiredmsgtype, ?int &$msgtype, int $maxsize, 
  * @throws SemException
  *
  */
-function msg_remove_queue($queue): void
+function msg_remove_queue($queue)
 {
     error_clear_last();
     $result = \msg_remove_queue($queue);
@@ -155,7 +155,7 @@ function msg_remove_queue($queue): void
  * @throws SemException
  *
  */
-function msg_send($queue, int $msgtype, $message, bool $serialize = true, bool $blocking = true, ?int &$errorcode = null): void
+function msg_send($queue, int $msgtype, $message, bool $serialize = true, bool $blocking = true, &$errorcode = null)
 {
     error_clear_last();
     $result = \msg_send($queue, $msgtype, $message, $serialize, $blocking, $errorcode);
@@ -182,7 +182,7 @@ function msg_send($queue, int $msgtype, $message, bool $serialize = true, bool $
  * @throws SemException
  *
  */
-function msg_set_queue($queue, array $data): void
+function msg_set_queue($queue, array $data)
 {
     error_clear_last();
     $result = \msg_set_queue($queue, $data);
@@ -211,7 +211,7 @@ function msg_set_queue($queue, array $data): void
  * @throws SemException
  *
  */
-function sem_acquire($sem_identifier, bool $nowait = false): void
+function sem_acquire($sem_identifier, bool $nowait = false)
 {
     error_clear_last();
     $result = \sem_acquire($sem_identifier, $nowait);
@@ -268,7 +268,7 @@ function sem_get(int $key, int $max_acquire = 1, int $perm = 0666, int $auto_rel
  * @throws SemException
  *
  */
-function sem_release($sem_identifier): void
+function sem_release($sem_identifier)
 {
     error_clear_last();
     $result = \sem_release($sem_identifier);
@@ -288,7 +288,7 @@ function sem_release($sem_identifier): void
  * @throws SemException
  *
  */
-function sem_remove($sem_identifier): void
+function sem_remove($sem_identifier)
 {
     error_clear_last();
     $result = \sem_remove($sem_identifier);
@@ -318,7 +318,7 @@ function sem_remove($sem_identifier): void
  * @throws SemException
  *
  */
-function shm_put_var($shm_identifier, int $variable_key, $variable): void
+function shm_put_var($shm_identifier, int $variable_key, $variable)
 {
     error_clear_last();
     $result = \shm_put_var($shm_identifier, $variable_key, $variable);
@@ -338,7 +338,7 @@ function shm_put_var($shm_identifier, int $variable_key, $variable): void
  * @throws SemException
  *
  */
-function shm_remove_var($shm_identifier, int $variable_key): void
+function shm_remove_var($shm_identifier, int $variable_key)
 {
     error_clear_last();
     $result = \shm_remove_var($shm_identifier, $variable_key);
@@ -357,7 +357,7 @@ function shm_remove_var($shm_identifier, int $variable_key): void
  * @throws SemException
  *
  */
-function shm_remove($shm_identifier): void
+function shm_remove($shm_identifier)
 {
     error_clear_last();
     $result = \shm_remove($shm_identifier);

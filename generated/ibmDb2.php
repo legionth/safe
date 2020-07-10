@@ -96,7 +96,7 @@ function db2_autocommit($connection, int $value = null)
  * @throws IbmDb2Exception
  *
  */
-function db2_bind_param($stmt, int $parameter_number, string $variable_name, int $parameter_type = null, int $data_type = 0, int $precision = -1, int $scale = 0): void
+function db2_bind_param($stmt, int $parameter_number, string $variable_name, int $parameter_type = null, int $data_type = 0, int $precision = -1, int $scale = 0)
 {
     error_clear_last();
     if ($scale !== 0) {
@@ -249,7 +249,7 @@ function db2_client_info($connection): object
  * @throws IbmDb2Exception
  *
  */
-function db2_close($connection): void
+function db2_close($connection)
 {
     error_clear_last();
     $result = \db2_close($connection);
@@ -270,7 +270,7 @@ function db2_close($connection): void
  * @throws IbmDb2Exception
  *
  */
-function db2_commit($connection): void
+function db2_commit($connection)
 {
     error_clear_last();
     $result = \db2_commit($connection);
@@ -304,7 +304,7 @@ function db2_commit($connection): void
  * @throws IbmDb2Exception
  *
  */
-function db2_execute($stmt, array $parameters = null): void
+function db2_execute($stmt, array $parameters = null)
 {
     error_clear_last();
     if ($parameters !== null) {
@@ -328,7 +328,7 @@ function db2_execute($stmt, array $parameters = null): void
  * @throws IbmDb2Exception
  *
  */
-function db2_free_result($stmt): void
+function db2_free_result($stmt)
 {
     error_clear_last();
     $result = \db2_free_result($stmt);
@@ -348,7 +348,7 @@ function db2_free_result($stmt): void
  * @throws IbmDb2Exception
  *
  */
-function db2_free_stmt($stmt): void
+function db2_free_stmt($stmt)
 {
     error_clear_last();
     $result = \db2_free_stmt($stmt);
@@ -541,7 +541,7 @@ function db2_get_option($resource, string $option): string
  * @throws IbmDb2Exception
  *
  */
-function db2_pclose($resource): void
+function db2_pclose($resource)
 {
     error_clear_last();
     $result = \db2_pclose($resource);
@@ -562,7 +562,7 @@ function db2_pclose($resource): void
  * @throws IbmDb2Exception
  *
  */
-function db2_rollback($connection): void
+function db2_rollback($connection)
 {
     error_clear_last();
     $result = \db2_rollback($connection);
@@ -1211,7 +1211,7 @@ function db2_server_info($connection): object
  * @throws IbmDb2Exception
  *
  */
-function db2_set_option($resource, array $options, int $type): void
+function db2_set_option($resource, array $options, int $type)
 {
     error_clear_last();
     $result = \db2_set_option($resource, $options, $type);

@@ -48,7 +48,7 @@ function iconv_get_encoding(string $type = "all")
  * @throws IconvException
  *
  */
-function iconv_set_encoding(string $type, string $charset): void
+function iconv_set_encoding(string $type, string $charset)
 {
     error_clear_last();
     $result = \iconv_set_encoding($type, $charset);

@@ -20,7 +20,7 @@ use Safe\Exceptions\PosixException;
  * @throws PosixException
  *
  */
-function posix_access(string $file, int $mode = POSIX_F_OK): void
+function posix_access(string $file, int $mode = POSIX_F_OK)
 {
     error_clear_last();
     $result = \posix_access($file, $mode);
@@ -122,7 +122,7 @@ function posix_getpgid(int $pid): int
  * @throws PosixException
  *
  */
-function posix_initgroups(string $name, int $base_group_id): void
+function posix_initgroups(string $name, int $base_group_id)
 {
     error_clear_last();
     $result = \posix_initgroups($name, $base_group_id);
@@ -141,7 +141,7 @@ function posix_initgroups(string $name, int $base_group_id): void
  * @throws PosixException
  *
  */
-function posix_kill(int $pid, int $sig): void
+function posix_kill(int $pid, int $sig)
 {
     error_clear_last();
     $result = \posix_kill($pid, $sig);
@@ -165,7 +165,7 @@ function posix_kill(int $pid, int $sig): void
  * @throws PosixException
  *
  */
-function posix_mkfifo(string $pathname, int $mode): void
+function posix_mkfifo(string $pathname, int $mode)
 {
     error_clear_last();
     $result = \posix_mkfifo($pathname, $mode);
@@ -190,7 +190,7 @@ function posix_mkfifo(string $pathname, int $mode): void
  * @throws PosixException
  *
  */
-function posix_mknod(string $pathname, int $mode, int $major = 0, int $minor = 0): void
+function posix_mknod(string $pathname, int $mode, int $major = 0, int $minor = 0)
 {
     error_clear_last();
     $result = \posix_mknod($pathname, $mode, $major, $minor);
@@ -209,7 +209,7 @@ function posix_mknod(string $pathname, int $mode, int $major = 0, int $minor = 0
  * @throws PosixException
  *
  */
-function posix_setegid(int $gid): void
+function posix_setegid(int $gid)
 {
     error_clear_last();
     $result = \posix_setegid($gid);
@@ -228,7 +228,7 @@ function posix_setegid(int $gid): void
  * @throws PosixException
  *
  */
-function posix_seteuid(int $uid): void
+function posix_seteuid(int $uid)
 {
     error_clear_last();
     $result = \posix_seteuid($uid);
@@ -250,7 +250,7 @@ function posix_seteuid(int $uid): void
  * @throws PosixException
  *
  */
-function posix_setgid(int $gid): void
+function posix_setgid(int $gid)
 {
     error_clear_last();
     $result = \posix_setgid($gid);
@@ -269,7 +269,7 @@ function posix_setgid(int $gid): void
  * @throws PosixException
  *
  */
-function posix_setpgid(int $pid, int $pgid): void
+function posix_setpgid(int $pid, int $pgid)
 {
     error_clear_last();
     $result = \posix_setpgid($pid, $pgid);
@@ -300,7 +300,7 @@ function posix_setpgid(int $pid, int $pgid): void
  * @throws PosixException
  *
  */
-function posix_setrlimit(int $resource, int $softlimit, int $hardlimit): void
+function posix_setrlimit(int $resource, int $softlimit, int $hardlimit)
 {
     error_clear_last();
     $result = \posix_setrlimit($resource, $softlimit, $hardlimit);
@@ -319,7 +319,7 @@ function posix_setrlimit(int $resource, int $softlimit, int $hardlimit): void
  * @throws PosixException
  *
  */
-function posix_setuid(int $uid): void
+function posix_setuid(int $uid)
 {
     error_clear_last();
     $result = \posix_setuid($uid);

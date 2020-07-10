@@ -9,20 +9,20 @@ use Safe\Exceptions\DatetimeException;
 
 class DateTimeTest extends TestCase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         require_once __DIR__ . '/../../lib/Exceptions/SafeExceptionInterface.php';
         require_once __DIR__ . '/../../generated/Exceptions/DatetimeException.php';
         require_once __DIR__ . '/../../lib/DateTime.php';
     }
 
-    public function testSafeDatetimeCrashOnError(): void
+    public function testSafeDatetimeCrashOnError()
     {
         $this->expectException(DatetimeException::class);
         $datetime = DateTime::createFromFormat('lol', 'super');
     }
 
-    public function testCreateFromFormatPreserveTimeAndTimezone(): void
+    public function testCreateFromFormatPreserveTimeAndTimezone()
     {
         $timezone = new \DateTimeZone('Pacific/Chatham');
         $datetime = DateTime::createFromFormat('d-m-Y', '20-03-2006', $timezone);
@@ -31,7 +31,7 @@ class DateTimeTest extends TestCase
         $this->assertEquals($timezone, $datetime->getTimezone());
     }
 
-    public function testSetDate(): void
+    public function testSetDate()
     {
         $datetime = new DateTime();
         $datetime = $datetime->setDate(2017, 4, 6);
@@ -43,7 +43,7 @@ class DateTimeTest extends TestCase
         //todo: test an error case
     }
 
-    public function testModify(): void
+    public function testModify()
     {
         $datetime = new DateTime();
         $datetime = $datetime->setDate(2017, 4, 6);

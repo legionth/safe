@@ -81,7 +81,7 @@ class MethodTest extends TestCase
         $this->assertEquals('', $params[0]->getDefaultValue());
     }
     
-    public function testGetReturnDocBlock(): void
+    public function testGetReturnDocBlock()
     {
         $docPage = new DocPage(__DIR__ . '/../doc/doc-en/en/reference/array/functions/array-replace.xml');
         $xmlObject = $docPage->getMethodSynopsis();

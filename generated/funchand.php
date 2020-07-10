@@ -28,12 +28,12 @@ function create_function(string $args, string $code): string
 /**
  *
  *
- * @param callable(): void $function The function to register.
+ * @param callable() $function The function to register.
  * @param mixed $params
  * @throws FunchandException
  *
  */
-function register_tick_function(callable $function, ...$params): void
+function register_tick_function(callable $function, ...$params)
 {
     error_clear_last();
     if ($params !== []) {

@@ -13,7 +13,7 @@ use Safe\Exceptions\PdfException;
  * @throws PdfException
  *
  */
-function PDF_activate_item($pdfdoc, int $id): void
+function PDF_activate_item($pdfdoc, int $id)
 {
     error_clear_last();
     $result = \PDF_activate_item($pdfdoc, $id);
@@ -42,7 +42,7 @@ function PDF_activate_item($pdfdoc, int $id): void
  * @throws PdfException
  *
  */
-function PDF_add_locallink($pdfdoc, float $lowerleftx, float $lowerlefty, float $upperrightx, float $upperrighty, int $page, string $dest): void
+function PDF_add_locallink($pdfdoc, float $lowerleftx, float $lowerlefty, float $upperrightx, float $upperrighty, int $page, string $dest)
 {
     error_clear_last();
     $result = \PDF_add_locallink($pdfdoc, $lowerleftx, $lowerlefty, $upperrightx, $upperrighty, $page, $dest);
@@ -62,7 +62,7 @@ function PDF_add_locallink($pdfdoc, float $lowerleftx, float $lowerlefty, float 
  * @throws PdfException
  *
  */
-function PDF_add_nameddest($pdfdoc, string $name, string $optlist): void
+function PDF_add_nameddest($pdfdoc, string $name, string $optlist)
 {
     error_clear_last();
     $result = \PDF_add_nameddest($pdfdoc, $name, $optlist);
@@ -91,7 +91,7 @@ function PDF_add_nameddest($pdfdoc, string $name, string $optlist): void
  * @throws PdfException
  *
  */
-function PDF_add_note($pdfdoc, float $llx, float $lly, float $urx, float $ury, string $contents, string $title, string $icon, int $open): void
+function PDF_add_note($pdfdoc, float $llx, float $lly, float $urx, float $ury, string $contents, string $title, string $icon, int $open)
 {
     error_clear_last();
     $result = \PDF_add_note($pdfdoc, $llx, $lly, $urx, $ury, $contents, $title, $icon, $open);
@@ -122,7 +122,7 @@ function PDF_add_note($pdfdoc, float $llx, float $lly, float $urx, float $ury, s
  * @throws PdfException
  *
  */
-function PDF_add_pdflink($pdfdoc, float $bottom_left_x, float $bottom_left_y, float $up_right_x, float $up_right_y, string $filename, int $page, string $dest): void
+function PDF_add_pdflink($pdfdoc, float $bottom_left_x, float $bottom_left_y, float $up_right_x, float $up_right_y, string $filename, int $page, string $dest)
 {
     error_clear_last();
     $result = \PDF_add_pdflink($pdfdoc, $bottom_left_x, $bottom_left_y, $up_right_x, $up_right_y, $filename, $page, $dest);
@@ -141,7 +141,7 @@ function PDF_add_pdflink($pdfdoc, float $bottom_left_x, float $bottom_left_y, fl
  * @throws PdfException
  *
  */
-function PDF_add_thumbnail($pdfdoc, int $image): void
+function PDF_add_thumbnail($pdfdoc, int $image)
 {
     error_clear_last();
     $result = \PDF_add_thumbnail($pdfdoc, $image);
@@ -169,7 +169,7 @@ function PDF_add_thumbnail($pdfdoc, int $image): void
  * @throws PdfException
  *
  */
-function PDF_add_weblink($pdfdoc, float $lowerleftx, float $lowerlefty, float $upperrightx, float $upperrighty, string $url): void
+function PDF_add_weblink($pdfdoc, float $lowerleftx, float $lowerlefty, float $upperrightx, float $upperrighty, string $url)
 {
     error_clear_last();
     $result = \PDF_add_weblink($pdfdoc, $lowerleftx, $lowerlefty, $upperrightx, $upperrighty, $url);
@@ -199,7 +199,7 @@ function PDF_add_weblink($pdfdoc, float $lowerleftx, float $lowerlefty, float $u
  * @throws PdfException
  *
  */
-function PDF_attach_file($pdfdoc, float $llx, float $lly, float $urx, float $ury, string $filename, string $description, string $author, string $mimetype, string $icon): void
+function PDF_attach_file($pdfdoc, float $llx, float $lly, float $urx, float $ury, string $filename, string $description, string $author, string $mimetype, string $icon)
 {
     error_clear_last();
     $result = \PDF_attach_file($pdfdoc, $llx, $lly, $urx, $ury, $filename, $description, $author, $mimetype, $icon);
@@ -219,7 +219,7 @@ function PDF_attach_file($pdfdoc, float $llx, float $lly, float $urx, float $ury
  * @throws PdfException
  *
  */
-function PDF_begin_layer($pdfdoc, int $layer): void
+function PDF_begin_layer($pdfdoc, int $layer)
 {
     error_clear_last();
     $result = \PDF_begin_layer($pdfdoc, $layer);
@@ -303,7 +303,7 @@ function PDF_begin_layer($pdfdoc, int $layer): void
  * @throws PdfException
  *
  */
-function PDF_begin_page_ext($pdfdoc, float $width, float $height, string $optlist): void
+function PDF_begin_page_ext($pdfdoc, float $width, float $height, string $optlist)
 {
     error_clear_last();
     $result = \PDF_begin_page_ext($pdfdoc, $width, $height, $optlist);
@@ -325,7 +325,7 @@ function PDF_begin_page_ext($pdfdoc, float $width, float $height, string $optlis
  * @throws PdfException
  *
  */
-function PDF_begin_page($pdfdoc, float $width, float $height): void
+function PDF_begin_page($pdfdoc, float $width, float $height)
 {
     error_clear_last();
     $result = \PDF_begin_page($pdfdoc, $width, $height);
@@ -345,7 +345,7 @@ function PDF_begin_page($pdfdoc, float $width, float $height): void
  * @throws PdfException
  *
  */
-function PDF_circle($pdfdoc, float $x, float $y, float $r): void
+function PDF_circle($pdfdoc, float $x, float $y, float $r)
 {
     error_clear_last();
     $result = \PDF_circle($pdfdoc, $x, $y, $r);
@@ -362,7 +362,7 @@ function PDF_circle($pdfdoc, float $x, float $y, float $r): void
  * @throws PdfException
  *
  */
-function PDF_clip($p): void
+function PDF_clip($p)
 {
     error_clear_last();
     $result = \PDF_clip($p);
@@ -380,7 +380,7 @@ function PDF_clip($p): void
  * @throws PdfException
  *
  */
-function PDF_close_pdi_page($p, int $page): void
+function PDF_close_pdi_page($p, int $page)
 {
     error_clear_last();
     $result = \PDF_close_pdi_page($p, $page);
@@ -401,7 +401,7 @@ function PDF_close_pdi_page($p, int $page): void
  * @throws PdfException
  *
  */
-function PDF_close_pdi($p, int $doc): void
+function PDF_close_pdi($p, int $doc)
 {
     error_clear_last();
     $result = \PDF_close_pdi($p, $doc);
@@ -422,7 +422,7 @@ function PDF_close_pdi($p, int $doc): void
  * @throws PdfException
  *
  */
-function PDF_close($p): void
+function PDF_close($p)
 {
     error_clear_last();
     $result = \PDF_close($p);
@@ -439,7 +439,7 @@ function PDF_close($p): void
  * @throws PdfException
  *
  */
-function PDF_closepath_fill_stroke($p): void
+function PDF_closepath_fill_stroke($p)
 {
     error_clear_last();
     $result = \PDF_closepath_fill_stroke($p);
@@ -456,7 +456,7 @@ function PDF_closepath_fill_stroke($p): void
  * @throws PdfException
  *
  */
-function PDF_closepath_stroke($p): void
+function PDF_closepath_stroke($p)
 {
     error_clear_last();
     $result = \PDF_closepath_stroke($p);
@@ -473,7 +473,7 @@ function PDF_closepath_stroke($p): void
  * @throws PdfException
  *
  */
-function PDF_closepath($p): void
+function PDF_closepath($p)
 {
     error_clear_last();
     $result = \PDF_closepath($p);
@@ -496,7 +496,7 @@ function PDF_closepath($p): void
  * @throws PdfException
  *
  */
-function PDF_concat($p, float $a, float $b, float $c, float $d, float $e, float $f): void
+function PDF_concat($p, float $a, float $b, float $c, float $d, float $e, float $f)
 {
     error_clear_last();
     $result = \PDF_concat($p, $a, $b, $c, $d, $e, $f);
@@ -514,7 +514,7 @@ function PDF_concat($p, float $a, float $b, float $c, float $d, float $e, float 
  * @throws PdfException
  *
  */
-function PDF_continue_text($p, string $text): void
+function PDF_continue_text($p, string $text)
 {
     error_clear_last();
     $result = \PDF_continue_text($p, $text);
@@ -538,7 +538,7 @@ function PDF_continue_text($p, string $text): void
  * @throws PdfException
  *
  */
-function PDF_curveto($p, float $x1, float $y1, float $x2, float $y2, float $x3, float $y3): void
+function PDF_curveto($p, float $x1, float $y1, float $x2, float $y2, float $x3, float $y3)
 {
     error_clear_last();
     $result = \PDF_curveto($p, $x1, $y1, $x2, $y2, $x3, $y3);
@@ -555,7 +555,7 @@ function PDF_curveto($p, float $x1, float $y1, float $x2, float $y2, float $x3, 
  * @throws PdfException
  *
  */
-function PDF_delete($pdfdoc): void
+function PDF_delete($pdfdoc)
 {
     error_clear_last();
     $result = \PDF_delete($pdfdoc);
@@ -574,7 +574,7 @@ function PDF_delete($pdfdoc): void
  * @throws PdfException
  *
  */
-function PDF_end_layer($pdfdoc): void
+function PDF_end_layer($pdfdoc)
 {
     error_clear_last();
     $result = \PDF_end_layer($pdfdoc);
@@ -592,7 +592,7 @@ function PDF_end_layer($pdfdoc): void
  * @throws PdfException
  *
  */
-function PDF_end_page_ext($pdfdoc, string $optlist): void
+function PDF_end_page_ext($pdfdoc, string $optlist)
 {
     error_clear_last();
     $result = \PDF_end_page_ext($pdfdoc, $optlist);
@@ -609,7 +609,7 @@ function PDF_end_page_ext($pdfdoc, string $optlist): void
  * @throws PdfException
  *
  */
-function PDF_end_page($p): void
+function PDF_end_page($p)
 {
     error_clear_last();
     $result = \PDF_end_page($p);
@@ -626,7 +626,7 @@ function PDF_end_page($p): void
  * @throws PdfException
  *
  */
-function PDF_end_pattern($p): void
+function PDF_end_pattern($p)
 {
     error_clear_last();
     $result = \PDF_end_pattern($p);
@@ -643,7 +643,7 @@ function PDF_end_pattern($p): void
  * @throws PdfException
  *
  */
-function PDF_end_template($p): void
+function PDF_end_template($p)
 {
     error_clear_last();
     $result = \PDF_end_template($p);
@@ -661,7 +661,7 @@ function PDF_end_template($p): void
  * @throws PdfException
  *
  */
-function PDF_fill_stroke($p): void
+function PDF_fill_stroke($p)
 {
     error_clear_last();
     $result = \PDF_fill_stroke($p);
@@ -679,7 +679,7 @@ function PDF_fill_stroke($p): void
  * @throws PdfException
  *
  */
-function PDF_fill($p): void
+function PDF_fill($p)
 {
     error_clear_last();
     $result = \PDF_fill($p);
@@ -701,7 +701,7 @@ function PDF_fill($p): void
  * @throws PdfException
  *
  */
-function PDF_fit_image($pdfdoc, int $image, float $x, float $y, string $optlist): void
+function PDF_fit_image($pdfdoc, int $image, float $x, float $y, string $optlist)
 {
     error_clear_last();
     $result = \PDF_fit_image($pdfdoc, $image, $x, $y, $optlist);
@@ -723,7 +723,7 @@ function PDF_fit_image($pdfdoc, int $image, float $x, float $y, string $optlist)
  * @throws PdfException
  *
  */
-function PDF_fit_pdi_page($pdfdoc, int $page, float $x, float $y, string $optlist): void
+function PDF_fit_pdi_page($pdfdoc, int $page, float $x, float $y, string $optlist)
 {
     error_clear_last();
     $result = \PDF_fit_pdi_page($pdfdoc, $page, $x, $y, $optlist);
@@ -744,7 +744,7 @@ function PDF_fit_pdi_page($pdfdoc, int $page, float $x, float $y, string $optlis
  * @throws PdfException
  *
  */
-function PDF_fit_textline($pdfdoc, string $text, float $x, float $y, string $optlist): void
+function PDF_fit_textline($pdfdoc, string $text, float $x, float $y, string $optlist)
 {
     error_clear_last();
     $result = \PDF_fit_textline($pdfdoc, $text, $x, $y, $optlist);
@@ -762,7 +762,7 @@ function PDF_fit_textline($pdfdoc, string $text, float $x, float $y, string $opt
  * @throws PdfException
  *
  */
-function PDF_initgraphics($p): void
+function PDF_initgraphics($p)
 {
     error_clear_last();
     $result = \PDF_initgraphics($p);
@@ -781,7 +781,7 @@ function PDF_initgraphics($p): void
  * @throws PdfException
  *
  */
-function PDF_lineto($p, float $x, float $y): void
+function PDF_lineto($p, float $x, float $y)
 {
     error_clear_last();
     $result = \PDF_lineto($p, $x, $y);
@@ -821,7 +821,7 @@ function PDF_makespotcolor($p, string $spotname): int
  * @throws PdfException
  *
  */
-function PDF_moveto($p, float $x, float $y): void
+function PDF_moveto($p, float $x, float $y)
 {
     error_clear_last();
     $result = \PDF_moveto($p, $x, $y);
@@ -843,7 +843,7 @@ function PDF_moveto($p, float $x, float $y): void
  * @throws PdfException
  *
  */
-function PDF_open_file($p, string $filename): void
+function PDF_open_file($p, string $filename)
 {
     error_clear_last();
     $result = \PDF_open_file($p, $filename);
@@ -867,7 +867,7 @@ function PDF_open_file($p, string $filename): void
  * @throws PdfException
  *
  */
-function PDF_place_image($pdfdoc, int $image, float $x, float $y, float $scale): void
+function PDF_place_image($pdfdoc, int $image, float $x, float $y, float $scale)
 {
     error_clear_last();
     $result = \PDF_place_image($pdfdoc, $image, $x, $y, $scale);
@@ -892,7 +892,7 @@ function PDF_place_image($pdfdoc, int $image, float $x, float $y, float $scale):
  * @throws PdfException
  *
  */
-function PDF_place_pdi_page($pdfdoc, int $page, float $x, float $y, float $sx, float $sy): void
+function PDF_place_pdi_page($pdfdoc, int $page, float $x, float $y, float $sx, float $sy)
 {
     error_clear_last();
     $result = \PDF_place_pdi_page($pdfdoc, $page, $x, $y, $sx, $sy);
@@ -913,7 +913,7 @@ function PDF_place_pdi_page($pdfdoc, int $page, float $x, float $y, float $sx, f
  * @throws PdfException
  *
  */
-function PDF_rect($p, float $x, float $y, float $width, float $height): void
+function PDF_rect($p, float $x, float $y, float $width, float $height)
 {
     error_clear_last();
     $result = \PDF_rect($p, $x, $y, $width, $height);
@@ -930,7 +930,7 @@ function PDF_rect($p, float $x, float $y, float $width, float $height): void
  * @throws PdfException
  *
  */
-function PDF_restore($p): void
+function PDF_restore($p)
 {
     error_clear_last();
     $result = \PDF_restore($p);
@@ -948,7 +948,7 @@ function PDF_restore($p): void
  * @throws PdfException
  *
  */
-function PDF_rotate($p, float $phi): void
+function PDF_rotate($p, float $phi)
 {
     error_clear_last();
     $result = \PDF_rotate($p, $phi);
@@ -965,7 +965,7 @@ function PDF_rotate($p, float $phi): void
  * @throws PdfException
  *
  */
-function PDF_save($p): void
+function PDF_save($p)
 {
     error_clear_last();
     $result = \PDF_save($p);
@@ -984,7 +984,7 @@ function PDF_save($p): void
  * @throws PdfException
  *
  */
-function PDF_scale($p, float $sx, float $sy): void
+function PDF_scale($p, float $sx, float $sy)
 {
     error_clear_last();
     $result = \PDF_scale($p, $sx, $sy);
@@ -1008,7 +1008,7 @@ function PDF_scale($p, float $sx, float $sy): void
  * @throws PdfException
  *
  */
-function PDF_set_border_color($p, float $red, float $green, float $blue): void
+function PDF_set_border_color($p, float $red, float $green, float $blue)
 {
     error_clear_last();
     $result = \PDF_set_border_color($p, $red, $green, $blue);
@@ -1031,7 +1031,7 @@ function PDF_set_border_color($p, float $red, float $green, float $blue): void
  * @throws PdfException
  *
  */
-function PDF_set_border_dash($pdfdoc, float $black, float $white): void
+function PDF_set_border_dash($pdfdoc, float $black, float $white)
 {
     error_clear_last();
     $result = \PDF_set_border_dash($pdfdoc, $black, $white);
@@ -1055,7 +1055,7 @@ function PDF_set_border_dash($pdfdoc, float $black, float $white): void
  * @throws PdfException
  *
  */
-function PDF_set_border_style($pdfdoc, string $style, float $width): void
+function PDF_set_border_style($pdfdoc, string $style, float $width)
 {
     error_clear_last();
     $result = \PDF_set_border_style($pdfdoc, $style, $width);
@@ -1075,7 +1075,7 @@ function PDF_set_border_style($pdfdoc, string $style, float $width): void
  * @throws PdfException
  *
  */
-function PDF_set_info($p, string $key, string $value): void
+function PDF_set_info($p, string $key, string $value)
 {
     error_clear_last();
     $result = \PDF_set_info($p, $key, $value);
@@ -1096,7 +1096,7 @@ function PDF_set_info($p, string $key, string $value): void
  * @throws PdfException
  *
  */
-function PDF_set_layer_dependency($pdfdoc, string $type, string $optlist): void
+function PDF_set_layer_dependency($pdfdoc, string $type, string $optlist)
 {
     error_clear_last();
     $result = \PDF_set_layer_dependency($pdfdoc, $type, $optlist);
@@ -1115,7 +1115,7 @@ function PDF_set_layer_dependency($pdfdoc, string $type, string $optlist): void
  * @throws PdfException
  *
  */
-function PDF_set_parameter($p, string $key, string $value): void
+function PDF_set_parameter($p, string $key, string $value)
 {
     error_clear_last();
     $result = \PDF_set_parameter($p, $key, $value);
@@ -1134,7 +1134,7 @@ function PDF_set_parameter($p, string $key, string $value): void
  * @throws PdfException
  *
  */
-function PDF_set_text_pos($p, float $x, float $y): void
+function PDF_set_text_pos($p, float $x, float $y)
 {
     error_clear_last();
     $result = \PDF_set_text_pos($p, $x, $y);
@@ -1153,7 +1153,7 @@ function PDF_set_text_pos($p, float $x, float $y): void
  * @throws PdfException
  *
  */
-function PDF_set_value($p, string $key, float $value): void
+function PDF_set_value($p, string $key, float $value)
 {
     error_clear_last();
     $result = \PDF_set_value($p, $key, $value);
@@ -1176,7 +1176,7 @@ function PDF_set_value($p, string $key, float $value): void
  * @throws PdfException
  *
  */
-function PDF_setcolor($p, string $fstype, string $colorspace, float $c1, float $c2, float $c3, float $c4): void
+function PDF_setcolor($p, string $fstype, string $colorspace, float $c1, float $c2, float $c3, float $c4)
 {
     error_clear_last();
     $result = \PDF_setcolor($p, $fstype, $colorspace, $c1, $c2, $c3, $c4);
@@ -1196,7 +1196,7 @@ function PDF_setcolor($p, string $fstype, string $colorspace, float $c1, float $
  * @throws PdfException
  *
  */
-function PDF_setdash($pdfdoc, float $b, float $w): void
+function PDF_setdash($pdfdoc, float $b, float $w)
 {
     error_clear_last();
     $result = \PDF_setdash($pdfdoc, $b, $w);
@@ -1214,7 +1214,7 @@ function PDF_setdash($pdfdoc, float $b, float $w): void
  * @throws PdfException
  *
  */
-function PDF_setdashpattern($pdfdoc, string $optlist): void
+function PDF_setdashpattern($pdfdoc, string $optlist)
 {
     error_clear_last();
     $result = \PDF_setdashpattern($pdfdoc, $optlist);
@@ -1232,7 +1232,7 @@ function PDF_setdashpattern($pdfdoc, string $optlist): void
  * @throws PdfException
  *
  */
-function PDF_setflat($pdfdoc, float $flatness): void
+function PDF_setflat($pdfdoc, float $flatness)
 {
     error_clear_last();
     $result = \PDF_setflat($pdfdoc, $flatness);
@@ -1253,7 +1253,7 @@ function PDF_setflat($pdfdoc, float $flatness): void
  * @throws PdfException
  *
  */
-function PDF_setfont($pdfdoc, int $font, float $fontsize): void
+function PDF_setfont($pdfdoc, int $font, float $fontsize)
 {
     error_clear_last();
     $result = \PDF_setfont($pdfdoc, $font, $fontsize);
@@ -1275,7 +1275,7 @@ function PDF_setfont($pdfdoc, int $font, float $fontsize): void
  * @throws PdfException
  *
  */
-function PDF_setgray_fill($p, float $g): void
+function PDF_setgray_fill($p, float $g)
 {
     error_clear_last();
     $result = \PDF_setgray_fill($p, $g);
@@ -1297,7 +1297,7 @@ function PDF_setgray_fill($p, float $g): void
  * @throws PdfException
  *
  */
-function PDF_setgray_stroke($p, float $g): void
+function PDF_setgray_stroke($p, float $g)
 {
     error_clear_last();
     $result = \PDF_setgray_stroke($p, $g);
@@ -1318,7 +1318,7 @@ function PDF_setgray_stroke($p, float $g): void
  * @throws PdfException
  *
  */
-function PDF_setgray($p, float $g): void
+function PDF_setgray($p, float $g)
 {
     error_clear_last();
     $result = \PDF_setgray($p, $g);
@@ -1337,7 +1337,7 @@ function PDF_setgray($p, float $g): void
  * @throws PdfException
  *
  */
-function PDF_setlinejoin($p, int $value): void
+function PDF_setlinejoin($p, int $value)
 {
     error_clear_last();
     $result = \PDF_setlinejoin($p, $value);
@@ -1355,7 +1355,7 @@ function PDF_setlinejoin($p, int $value): void
  * @throws PdfException
  *
  */
-function PDF_setlinewidth($p, float $width): void
+function PDF_setlinewidth($p, float $width)
 {
     error_clear_last();
     $result = \PDF_setlinewidth($p, $width);
@@ -1378,7 +1378,7 @@ function PDF_setlinewidth($p, float $width): void
  * @throws PdfException
  *
  */
-function PDF_setmatrix($p, float $a, float $b, float $c, float $d, float $e, float $f): void
+function PDF_setmatrix($p, float $a, float $b, float $c, float $d, float $e, float $f)
 {
     error_clear_last();
     $result = \PDF_setmatrix($p, $a, $b, $c, $d, $e, $f);
@@ -1396,7 +1396,7 @@ function PDF_setmatrix($p, float $a, float $b, float $c, float $d, float $e, flo
  * @throws PdfException
  *
  */
-function PDF_setmiterlimit($pdfdoc, float $miter): void
+function PDF_setmiterlimit($pdfdoc, float $miter)
 {
     error_clear_last();
     $result = \PDF_setmiterlimit($pdfdoc, $miter);
@@ -1419,7 +1419,7 @@ function PDF_setmiterlimit($pdfdoc, float $miter): void
  * @throws PdfException
  *
  */
-function PDF_setrgbcolor_fill($p, float $red, float $green, float $blue): void
+function PDF_setrgbcolor_fill($p, float $red, float $green, float $blue)
 {
     error_clear_last();
     $result = \PDF_setrgbcolor_fill($p, $red, $green, $blue);
@@ -1442,7 +1442,7 @@ function PDF_setrgbcolor_fill($p, float $red, float $green, float $blue): void
  * @throws PdfException
  *
  */
-function PDF_setrgbcolor_stroke($p, float $red, float $green, float $blue): void
+function PDF_setrgbcolor_stroke($p, float $red, float $green, float $blue)
 {
     error_clear_last();
     $result = \PDF_setrgbcolor_stroke($p, $red, $green, $blue);
@@ -1466,7 +1466,7 @@ function PDF_setrgbcolor_stroke($p, float $red, float $green, float $blue): void
  * @throws PdfException
  *
  */
-function PDF_setrgbcolor($p, float $red, float $green, float $blue): void
+function PDF_setrgbcolor($p, float $red, float $green, float $blue)
 {
     error_clear_last();
     $result = \PDF_setrgbcolor($p, $red, $green, $blue);
@@ -1486,7 +1486,7 @@ function PDF_setrgbcolor($p, float $red, float $green, float $blue): void
  * @throws PdfException
  *
  */
-function PDF_show_xy($p, string $text, float $x, float $y): void
+function PDF_show_xy($p, string $text, float $x, float $y)
 {
     error_clear_last();
     $result = \PDF_show_xy($p, $text, $x, $y);
@@ -1505,7 +1505,7 @@ function PDF_show_xy($p, string $text, float $x, float $y): void
  * @throws PdfException
  *
  */
-function PDF_show($pdfdoc, string $text): void
+function PDF_show($pdfdoc, string $text)
 {
     error_clear_last();
     $result = \PDF_show($pdfdoc, $text);
@@ -1525,7 +1525,7 @@ function PDF_show($pdfdoc, string $text): void
  * @throws PdfException
  *
  */
-function PDF_skew($p, float $alpha, float $beta): void
+function PDF_skew($p, float $alpha, float $beta)
 {
     error_clear_last();
     $result = \PDF_skew($p, $alpha, $beta);
@@ -1543,7 +1543,7 @@ function PDF_skew($p, float $alpha, float $beta): void
  * @throws PdfException
  *
  */
-function PDF_stroke($p): void
+function PDF_stroke($p)
 {
     error_clear_last();
     $result = \PDF_stroke($p);

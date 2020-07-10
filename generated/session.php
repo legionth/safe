@@ -11,7 +11,7 @@ use Safe\Exceptions\SessionException;
  * @throws SessionException
  *
  */
-function session_abort(): void
+function session_abort()
 {
     error_clear_last();
     $result = \session_abort();
@@ -33,7 +33,7 @@ function session_abort(): void
  * @throws SessionException
  *
  */
-function session_decode(string $data): void
+function session_decode(string $data)
 {
     error_clear_last();
     $result = \session_decode($data);
@@ -59,7 +59,7 @@ function session_decode(string $data): void
  * @throws SessionException
  *
  */
-function session_destroy(): void
+function session_destroy()
 {
     error_clear_last();
     $result = \session_destroy();
@@ -84,7 +84,7 @@ function session_destroy(): void
  * @throws SessionException
  *
  */
-function session_regenerate_id(bool $delete_old_session = false): void
+function session_regenerate_id(bool $delete_old_session = false)
 {
     error_clear_last();
     $result = \session_regenerate_id($delete_old_session);
@@ -102,7 +102,7 @@ function session_regenerate_id(bool $delete_old_session = false): void
  * @throws SessionException
  *
  */
-function session_reset(): void
+function session_reset()
 {
     error_clear_last();
     $result = \session_reset();
@@ -119,7 +119,7 @@ function session_reset(): void
  * @throws SessionException
  *
  */
-function session_unset(): void
+function session_unset()
 {
     error_clear_last();
     $result = \session_unset();
@@ -143,7 +143,7 @@ function session_unset(): void
  * @throws SessionException
  *
  */
-function session_write_close(): void
+function session_write_close()
 {
     error_clear_last();
     $result = \session_write_close();

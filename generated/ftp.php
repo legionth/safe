@@ -15,30 +15,10 @@ use Safe\Exceptions\FtpException;
  * @throws FtpException
  *
  */
-function ftp_alloc($ftp_stream, int $filesize, string &$result = null): void
+function ftp_alloc($ftp_stream, int $filesize, string &$result = null)
 {
     error_clear_last();
     $result = \ftp_alloc($ftp_stream, $filesize, $result);
-    if ($result === false) {
-        throw FtpException::createFromPhpError();
-    }
-}
-
-
-/**
- *
- *
- * @param resource $ftp
- * @param string $remote_file
- * @param string $local_file
- * @param int $mode
- * @throws FtpException
- *
- */
-function ftp_append($ftp, string $remote_file, string $local_file, int $mode = FTP_BINARY): void
-{
-    error_clear_last();
-    $result = \ftp_append($ftp, $remote_file, $local_file, $mode);
     if ($result === false) {
         throw FtpException::createFromPhpError();
     }
@@ -52,7 +32,7 @@ function ftp_append($ftp, string $remote_file, string $local_file, int $mode = F
  * @throws FtpException
  *
  */
-function ftp_cdup($ftp_stream): void
+function ftp_cdup($ftp_stream)
 {
     error_clear_last();
     $result = \ftp_cdup($ftp_stream);
@@ -70,7 +50,7 @@ function ftp_cdup($ftp_stream): void
  * @throws FtpException
  *
  */
-function ftp_chdir($ftp_stream, string $directory): void
+function ftp_chdir($ftp_stream, string $directory)
 {
     error_clear_last();
     $result = \ftp_chdir($ftp_stream, $directory);
@@ -110,7 +90,7 @@ function ftp_chmod($ftp_stream, int $mode, string $filename): int
  * @throws FtpException
  *
  */
-function ftp_close($ftp_stream): void
+function ftp_close($ftp_stream)
 {
     error_clear_last();
     $result = \ftp_close($ftp_stream);
@@ -156,7 +136,7 @@ function ftp_connect(string $host, int $port = 21, int $timeout = 90)
  * @throws FtpException
  *
  */
-function ftp_delete($ftp_stream, string $path): void
+function ftp_delete($ftp_stream, string $path)
 {
     error_clear_last();
     $result = \ftp_delete($ftp_stream, $path);
@@ -179,7 +159,7 @@ function ftp_delete($ftp_stream, string $path): void
  * @throws FtpException
  *
  */
-function ftp_fget($ftp_stream, $handle, string $remote_file, int $mode = FTP_BINARY, int $resumepos = 0): void
+function ftp_fget($ftp_stream, $handle, string $remote_file, int $mode = FTP_BINARY, int $resumepos = 0)
 {
     error_clear_last();
     $result = \ftp_fget($ftp_stream, $handle, $remote_file, $mode, $resumepos);
@@ -202,7 +182,7 @@ function ftp_fget($ftp_stream, $handle, string $remote_file, int $mode = FTP_BIN
  * @throws FtpException
  *
  */
-function ftp_fput($ftp_stream, string $remote_file, $handle, int $mode = FTP_BINARY, int $startpos = 0): void
+function ftp_fput($ftp_stream, string $remote_file, $handle, int $mode = FTP_BINARY, int $startpos = 0)
 {
     error_clear_last();
     $result = \ftp_fput($ftp_stream, $remote_file, $handle, $mode, $startpos);
@@ -225,7 +205,7 @@ function ftp_fput($ftp_stream, string $remote_file, $handle, int $mode = FTP_BIN
  * @throws FtpException
  *
  */
-function ftp_get($ftp_stream, string $local_file, string $remote_file, int $mode = FTP_BINARY, int $resumepos = 0): void
+function ftp_get($ftp_stream, string $local_file, string $remote_file, int $mode = FTP_BINARY, int $resumepos = 0)
 {
     error_clear_last();
     $result = \ftp_get($ftp_stream, $local_file, $remote_file, $mode, $resumepos);
@@ -244,7 +224,7 @@ function ftp_get($ftp_stream, string $local_file, string $remote_file, int $mode
  * @throws FtpException
  *
  */
-function ftp_login($ftp_stream, string $username, string $password): void
+function ftp_login($ftp_stream, string $username, string $password)
 {
     error_clear_last();
     $result = \ftp_login($ftp_stream, $username, $password);
@@ -274,47 +254,6 @@ function ftp_mkdir($ftp_stream, string $directory): string
 }
 
 
-/**
- *
- *
- * @param resource $ftp_stream The link identifier of the FTP connection.
- * @param string $directory The directory to be listed.
- * @return array Returns an array of arrays with file infos from the specified directory on success.
- * @throws FtpException
- *
- */
-function ftp_mlsd($ftp_stream, string $directory): array
-{
-    error_clear_last();
-    $result = \ftp_mlsd($ftp_stream, $directory);
-    if ($result === false) {
-        throw FtpException::createFromPhpError();
-    }
-    return $result;
-}
-
-
-/**
- *
- *
- * @param resource $ftp_stream The link identifier of the FTP connection.
- * @param string $directory The directory to be listed. This parameter can also include arguments, eg.
- * ftp_nlist($conn_id, "-la /your/dir");
- * Note that this parameter isn't escaped so there may be some issues with
- * filenames containing spaces and other characters.
- * @return array Returns an array of filenames from the specified directory on success.
- * @throws FtpException
- *
- */
-function ftp_nlist($ftp_stream, string $directory): array
-{
-    error_clear_last();
-    $result = \ftp_nlist($ftp_stream, $directory);
-    if ($result === false) {
-        throw FtpException::createFromPhpError();
-    }
-    return $result;
-}
 
 
 /**
@@ -331,7 +270,7 @@ function ftp_nlist($ftp_stream, string $directory): array
  * @throws FtpException
  *
  */
-function ftp_pasv($ftp_stream, bool $pasv): void
+function ftp_pasv($ftp_stream, bool $pasv)
 {
     error_clear_last();
     $result = \ftp_pasv($ftp_stream, $pasv);
@@ -353,7 +292,7 @@ function ftp_pasv($ftp_stream, bool $pasv): void
  * @throws FtpException
  *
  */
-function ftp_put($ftp_stream, string $remote_file, string $local_file, int $mode = FTP_BINARY, int $startpos = 0): void
+function ftp_put($ftp_stream, string $remote_file, string $local_file, int $mode = FTP_BINARY, int $startpos = 0)
 {
     error_clear_last();
     $result = \ftp_put($ftp_stream, $remote_file, $local_file, $mode, $startpos);
@@ -392,7 +331,7 @@ function ftp_pwd($ftp_stream): string
  * @throws FtpException
  *
  */
-function ftp_rename($ftp_stream, string $oldname, string $newname): void
+function ftp_rename($ftp_stream, string $oldname, string $newname)
 {
     error_clear_last();
     $result = \ftp_rename($ftp_stream, $oldname, $newname);
@@ -411,7 +350,7 @@ function ftp_rename($ftp_stream, string $oldname, string $newname): void
  * @throws FtpException
  *
  */
-function ftp_rmdir($ftp_stream, string $directory): void
+function ftp_rmdir($ftp_stream, string $directory)
 {
     error_clear_last();
     $result = \ftp_rmdir($ftp_stream, $directory);
@@ -435,7 +374,7 @@ function ftp_rmdir($ftp_stream, string $directory): void
  * @throws FtpException
  *
  */
-function ftp_site($ftp_stream, string $command): void
+function ftp_site($ftp_stream, string $command)
 {
     error_clear_last();
     $result = \ftp_site($ftp_stream, $command);

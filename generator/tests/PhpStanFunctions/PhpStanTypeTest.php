@@ -9,21 +9,21 @@ use Safe\Method;
 
 class PhpStanTypeTest extends TestCase
 {
-    public function testMixedTypes(): void 
+    public function testMixedTypes()
     {
         $param = new PhpStanType('array|string|int');
         $this->assertEquals('array|string|int', $param->getDocBlockType());
         $this->assertEquals('', $param->getSignatureType());
     }
 
-    public function testCallable(): void
+    public function testCallable()
     {
-        $param = new PhpStanType('callable(string): void');
-        $this->assertEquals('callable(string): void', $param->getDocBlockType());
+        $param = new PhpStanType('callable(string)');
+        $this->assertEquals('callable(string)', $param->getDocBlockType());
         $this->assertEquals('callable', $param->getSignatureType());
     }
 
-    public function testGenerics(): void
+    public function testGenerics()
     {
         $param = new PhpStanType('string[]');
         $this->assertEquals('string[]', $param->getDocBlockType());
@@ -42,7 +42,7 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('array', $param->getSignatureType());
     }
     
-    public function testNullable(): void 
+    public function testNullable()
     {
         $param = new PhpStanType('array|null');
         $this->assertEquals(true, $param->isNullable());
@@ -65,7 +65,7 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('?\HashContext', $param->getSignatureType());
     }
     
-    public function testParenthesisOutsideOfCallable(): void 
+    public function testParenthesisOutsideOfCallable()
     {
         $param = new PhpStanType('(?int)|(?string)');
         $this->assertEquals(true, $param->isNullable());
@@ -73,7 +73,7 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('', $param->getSignatureType());
     }
 
-    public function testFalsable(): void
+    public function testFalsable()
     {
         $param = new PhpStanType('string|false');
         $this->assertEquals(true, $param->isFalsable());
@@ -81,21 +81,21 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('string', $param->getSignatureType());
     }
     
-    public function testResource(): void 
+    public function testResource()
     {
         $param = new PhpStanType('resource');
         $this->assertEquals('resource', $param->getDocBlockType());
         $this->assertEquals('', $param->getSignatureType());
     }
 
-    public function testNamespace(): void
+    public function testNamespace()
     {
         $param = new PhpStanType('GMP');
         $this->assertEquals('\GMP', $param->getDocBlockType());
         $this->assertEquals('\GMP', $param->getSignatureType());
     }
     
-    public function testVoid(): void 
+    public function testVoid()
     {
         $param = new PhpStanType('');
         $this->assertEquals('', $param->getDocBlockType());
@@ -106,7 +106,7 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('void', $param->getSignatureType());
     }
     
-    public function testOciSpecialCases(): void 
+    public function testOciSpecialCases()
     {
         $param = new PhpStanType('OCI-Collection');
         $this->assertEquals('\OCI-Collection', $param->getDocBlockType());
@@ -117,7 +117,7 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('', $param->getSignatureType());
     }
     
-    public function testErrorTypeInteraction(): void 
+    public function testErrorTypeInteraction()
     {
         //bool => void if the method is falsy
         $param = new PhpStanType('bool');
@@ -135,7 +135,7 @@ class PhpStanTypeTest extends TestCase
         $this->assertEquals('int', $param->getSignatureType(Method::NULLSY_TYPE));
     }
     
-    public function testDuplicateType(): void 
+    public function testDuplicateType()
     {
         $param = new PhpStanType('array<string,string>|array<string,false>|array<string,array<int,mixed>>');
         $this->assertEquals('array<string,string>|array<string,false>|array<string,array<int,mixed>>', $param->getDocBlockType());

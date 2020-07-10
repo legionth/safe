@@ -14,7 +14,7 @@ use Safe\Exceptions\CubridException;
  * @throws CubridException
  *
  */
-function cubrid_free_result($req_identifier): void
+function cubrid_free_result($req_identifier)
 {
     error_clear_last();
     $result = \cubrid_free_result($req_identifier);
@@ -385,7 +385,7 @@ function cubrid_lob2_tell64($lob_identifier): string
  * @throws CubridException
  *
  */
-function cubrid_set_db_parameter($conn_identifier, int $param_type, int $param_value): void
+function cubrid_set_db_parameter($conn_identifier, int $param_type, int $param_value)
 {
     error_clear_last();
     $result = \cubrid_set_db_parameter($conn_identifier, $param_type, $param_value);

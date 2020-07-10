@@ -19,7 +19,7 @@ use Safe\Exceptions\LibeventException;
  * @throws LibeventException
  *
  */
-function event_add($event, int $timeout = -1): void
+function event_add($event, int $timeout = -1)
 {
     error_clear_last();
     $result = \event_add($event, $timeout);
@@ -37,7 +37,7 @@ function event_add($event, int $timeout = -1): void
  * @throws LibeventException
  *
  */
-function event_base_loopbreak($event_base): void
+function event_base_loopbreak($event_base)
 {
     error_clear_last();
     $result = \event_base_loopbreak($event_base);
@@ -56,7 +56,7 @@ function event_base_loopbreak($event_base): void
  * @throws LibeventException
  *
  */
-function event_base_loopexit($event_base, int $timeout = -1): void
+function event_base_loopexit($event_base, int $timeout = -1)
 {
     error_clear_last();
     $result = \event_base_loopexit($event_base, $timeout);
@@ -99,7 +99,7 @@ function event_base_new()
  * @throws LibeventException
  *
  */
-function event_base_priority_init($event_base, int $npriorities): void
+function event_base_priority_init($event_base, int $npriorities)
 {
     error_clear_last();
     $result = \event_base_priority_init($event_base, $npriorities);
@@ -118,7 +118,7 @@ function event_base_priority_init($event_base, int $npriorities): void
  * @throws LibeventException
  *
  */
-function event_base_reinit($event_base): void
+function event_base_reinit($event_base)
 {
     error_clear_last();
     $result = \event_base_reinit($event_base);
@@ -137,7 +137,7 @@ function event_base_reinit($event_base): void
  * @throws LibeventException
  *
  */
-function event_base_set($event, $event_base): void
+function event_base_set($event, $event_base)
 {
     error_clear_last();
     $result = \event_base_set($event, $event_base);
@@ -156,7 +156,7 @@ function event_base_set($event, $event_base): void
  * @throws LibeventException
  *
  */
-function event_buffer_base_set($bevent, $event_base): void
+function event_buffer_base_set($bevent, $event_base)
 {
     error_clear_last();
     $result = \event_buffer_base_set($bevent, $event_base);
@@ -175,7 +175,7 @@ function event_buffer_base_set($bevent, $event_base): void
  * @throws LibeventException
  *
  */
-function event_buffer_disable($bevent, int $events): void
+function event_buffer_disable($bevent, int $events)
 {
     error_clear_last();
     $result = \event_buffer_disable($bevent, $events);
@@ -194,7 +194,7 @@ function event_buffer_disable($bevent, int $events): void
  * @throws LibeventException
  *
  */
-function event_buffer_enable($bevent, int $events): void
+function event_buffer_enable($bevent, int $events)
 {
     error_clear_last();
     $result = \event_buffer_enable($bevent, $events);
@@ -247,7 +247,7 @@ function event_buffer_new($stream, $readcb, $writecb, $errorcb, $arg = null)
  * @throws LibeventException
  *
  */
-function event_buffer_priority_set($bevent, int $priority): void
+function event_buffer_priority_set($bevent, int $priority)
 {
     error_clear_last();
     $result = \event_buffer_priority_set($bevent, $priority);
@@ -271,7 +271,7 @@ function event_buffer_priority_set($bevent, int $priority): void
  * @throws LibeventException
  *
  */
-function event_buffer_set_callback($event, $readcb, $writecb, $errorcb, $arg = null): void
+function event_buffer_set_callback($event, $readcb, $writecb, $errorcb, $arg = null)
 {
     error_clear_last();
     if ($arg !== null) {
@@ -297,7 +297,7 @@ function event_buffer_set_callback($event, $readcb, $writecb, $errorcb, $arg = n
  * @throws LibeventException
  *
  */
-function event_buffer_write($bevent, string $data, int $data_size = -1): void
+function event_buffer_write($bevent, string $data, int $data_size = -1)
 {
     error_clear_last();
     $result = \event_buffer_write($bevent, $data, $data_size);
@@ -314,7 +314,7 @@ function event_buffer_write($bevent, string $data, int $data_size = -1): void
  * @throws LibeventException
  *
  */
-function event_del($event): void
+function event_del($event)
 {
     error_clear_last();
     $result = \event_del($event);
@@ -352,7 +352,7 @@ function event_new()
  * @throws LibeventException
  *
  */
-function event_priority_set($event, int $priority): void
+function event_priority_set($event, int $priority)
 {
     error_clear_last();
     $result = \event_priority_set($event, $priority);
@@ -423,7 +423,7 @@ function event_priority_set($event, int $priority): void
  * @throws LibeventException
  *
  */
-function event_set($event, $fd, int $events, $callback, $arg = null): void
+function event_set($event, $fd, int $events, $callback, $arg = null)
 {
     error_clear_last();
     if ($arg !== null) {
@@ -482,7 +482,7 @@ function event_set($event, $fd, int $events, $callback, $arg = null): void
  * @throws LibeventException
  *
  */
-function event_timer_set($event, callable $callback, $arg = null): void
+function event_timer_set($event, callable $callback, $arg = null)
 {
     error_clear_last();
     if ($arg !== null) {

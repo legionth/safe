@@ -18,7 +18,7 @@ use Safe\Exceptions\SqlsrvException;
  * @throws SqlsrvException
  *
  */
-function sqlsrv_begin_transaction($conn): void
+function sqlsrv_begin_transaction($conn)
 {
     error_clear_last();
     $result = \sqlsrv_begin_transaction($conn);
@@ -40,7 +40,7 @@ function sqlsrv_begin_transaction($conn): void
  * @throws SqlsrvException
  *
  */
-function sqlsrv_cancel($stmt): void
+function sqlsrv_cancel($stmt)
 {
     error_clear_last();
     $result = \sqlsrv_cancel($stmt);
@@ -105,7 +105,7 @@ function sqlsrv_client_info($conn): array
  * @throws SqlsrvException
  *
  */
-function sqlsrv_close($conn): void
+function sqlsrv_close($conn)
 {
     error_clear_last();
     $result = \sqlsrv_close($conn);
@@ -129,7 +129,7 @@ function sqlsrv_close($conn): void
  * @throws SqlsrvException
  *
  */
-function sqlsrv_commit($conn): void
+function sqlsrv_commit($conn)
 {
     error_clear_last();
     $result = \sqlsrv_commit($conn);
@@ -181,7 +181,7 @@ function sqlsrv_commit($conn): void
  * @throws SqlsrvException
  *
  */
-function sqlsrv_configure(string $setting, $value): void
+function sqlsrv_configure(string $setting, $value)
 {
     error_clear_last();
     $result = \sqlsrv_configure($setting, $value);
@@ -200,7 +200,7 @@ function sqlsrv_configure(string $setting, $value): void
  * @throws SqlsrvException
  *
  */
-function sqlsrv_execute($stmt): void
+function sqlsrv_execute($stmt)
 {
     error_clear_last();
     $result = \sqlsrv_execute($stmt);
@@ -223,7 +223,7 @@ function sqlsrv_execute($stmt): void
  * @throws SqlsrvException
  *
  */
-function sqlsrv_free_stmt($stmt): void
+function sqlsrv_free_stmt($stmt)
 {
     error_clear_last();
     $result = \sqlsrv_free_stmt($stmt);
@@ -276,7 +276,7 @@ function sqlsrv_get_field($stmt, int $fieldIndex, int $getAsType = null)
  * @throws SqlsrvException
  *
  */
-function sqlsrv_next_result($stmt): ?bool
+function sqlsrv_next_result($stmt)
 {
     error_clear_last();
     $result = \sqlsrv_next_result($stmt);
@@ -419,7 +419,7 @@ function sqlsrv_query($conn, string $sql, array $params = null, array $options =
  * @throws SqlsrvException
  *
  */
-function sqlsrv_rollback($conn): void
+function sqlsrv_rollback($conn)
 {
     error_clear_last();
     $result = \sqlsrv_rollback($conn);

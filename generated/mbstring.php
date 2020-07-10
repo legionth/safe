@@ -4,29 +4,6 @@ namespace Safe;
 
 use Safe\Exceptions\MbstringException;
 
-/**
- *
- *
- * @param int $cp
- * @param string $encoding
- * @return string Returns a specific character.
- * @throws MbstringException
- *
- */
-function mb_chr(int $cp, string $encoding = null): string
-{
-    error_clear_last();
-    if ($encoding !== null) {
-        $result = \mb_chr($cp, $encoding);
-    } else {
-        $result = \mb_chr($cp);
-    }
-    if ($result === false) {
-        throw MbstringException::createFromPhpError();
-    }
-    return $result;
-}
-
 
 /**
  * Sets the automatic character
@@ -190,7 +167,7 @@ function mb_ereg_search_getregs(): array
  * @throws MbstringException
  *
  */
-function mb_ereg_search_init(string $string, string $pattern = null, string $option = "msr"): void
+function mb_ereg_search_init(string $string, string $pattern = null, string $option = "msr")
 {
     error_clear_last();
     if ($option !== "msr") {
@@ -239,7 +216,7 @@ function mb_ereg_search_regs(string $pattern = null, string $option = "ms"): arr
  * @throws MbstringException
  *
  */
-function mb_ereg_search_setpos(int $position): void
+function mb_ereg_search_setpos(int $position)
 {
     error_clear_last();
     $result = \mb_ereg_search_setpos($position);
@@ -335,29 +312,6 @@ function mb_internal_encoding(string $encoding = null)
 }
 
 
-/**
- *
- *
- * @param string $str
- * @param string $encoding
- * @return int Returns a code point of character.
- * @throws MbstringException
- *
- */
-function mb_ord(string $str, string $encoding = null): int
-{
-    error_clear_last();
-    if ($encoding !== null) {
-        $result = \mb_ord($str, $encoding);
-    } else {
-        $result = \mb_ord($str);
-    }
-    if ($result === false) {
-        throw MbstringException::createFromPhpError();
-    }
-    return $result;
-}
-
 
 /**
  * Parses GET/POST/COOKIE data and
@@ -372,7 +326,7 @@ function mb_ord(string $str, string $encoding = null): int
  * @throws MbstringException
  *
  */
-function mb_parse_str(string $encoded_string, ?array &$result = null): void
+function mb_parse_str(string $encoded_string, &$result = null)
 {
     error_clear_last();
     $result = \mb_parse_str($encoded_string, $result);
@@ -464,7 +418,7 @@ function mb_regex_encoding(string $encoding = null)
  * @throws MbstringException
  *
  */
-function mb_send_mail(string $to, string $subject, string $message, $additional_headers = null, string $additional_parameter = null): void
+function mb_send_mail(string $to, string $subject, string $message, $additional_headers = null, string $additional_parameter = null)
 {
     error_clear_last();
     $result = \mb_send_mail($to, $subject, $message, $additional_headers, $additional_parameter);
@@ -488,37 +442,6 @@ function mb_split(string $pattern, string $string, int $limit = -1): array
 {
     error_clear_last();
     $result = \mb_split($pattern, $string, $limit);
-    if ($result === false) {
-        throw MbstringException::createFromPhpError();
-    }
-    return $result;
-}
-
-
-/**
- * This function will return an array of strings, it is a version of str_split with support for encodings of variable character size as well as fixed-size encodings of 1,2 or 4 byte characters.
- * If the split_length parameter is specified, the string is broken down into chunks of the specified length in characters (not bytes).
- * The encoding parameter can be optionally specified and it is good practice to do so.
- *
- * @param string $string The string to split into characters or chunks.
- * @param int $split_length If specified, each element of the returned array will be composed of multiple characters instead of a single character.
- * @param string $encoding The encoding
- * parameter is the character encoding. If it is omitted, the internal character
- * encoding value will be used.
- *
- * A string specifying one of the supported encodings.
- * @return array mb_str_split returns an array of strings.
- * @throws MbstringException
- *
- */
-function mb_str_split(string $string, int $split_length = 1, string $encoding = null): array
-{
-    error_clear_last();
-    if ($encoding !== null) {
-        $result = \mb_str_split($string, $split_length, $encoding);
-    } else {
-        $result = \mb_str_split($string, $split_length);
-    }
     if ($result === false) {
         throw MbstringException::createFromPhpError();
     }

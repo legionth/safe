@@ -13,7 +13,7 @@ use Safe\Exceptions\OpcacheException;
  * @throws OpcacheException
  *
  */
-function opcache_compile_file(string $file): void
+function opcache_compile_file(string $file)
 {
     error_clear_last();
     $result = \opcache_compile_file($file);

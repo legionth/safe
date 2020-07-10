@@ -16,7 +16,7 @@ use Safe\Exceptions\XdiffException;
  * @throws XdiffException
  *
  */
-function xdiff_file_bdiff(string $old_file, string $new_file, string $dest): void
+function xdiff_file_bdiff(string $old_file, string $new_file, string $dest)
 {
     error_clear_last();
     $result = \xdiff_file_bdiff($old_file, $new_file, $dest);
@@ -38,7 +38,7 @@ function xdiff_file_bdiff(string $old_file, string $new_file, string $dest): voi
  * @throws XdiffException
  *
  */
-function xdiff_file_bpatch(string $file, string $patch, string $dest): void
+function xdiff_file_bpatch(string $file, string $patch, string $dest)
 {
     error_clear_last();
     $result = \xdiff_file_bpatch($file, $patch, $dest);
@@ -62,7 +62,7 @@ function xdiff_file_bpatch(string $file, string $patch, string $dest): void
  * @throws XdiffException
  *
  */
-function xdiff_file_diff_binary(string $old_file, string $new_file, string $dest): void
+function xdiff_file_diff_binary(string $old_file, string $new_file, string $dest)
 {
     error_clear_last();
     $result = \xdiff_file_diff_binary($old_file, $new_file, $dest);
@@ -90,7 +90,7 @@ function xdiff_file_diff_binary(string $old_file, string $new_file, string $dest
  * @throws XdiffException
  *
  */
-function xdiff_file_diff(string $old_file, string $new_file, string $dest, int $context = 3, bool $minimal = false): void
+function xdiff_file_diff(string $old_file, string $new_file, string $dest, int $context = 3, bool $minimal = false)
 {
     error_clear_last();
     $result = \xdiff_file_diff($old_file, $new_file, $dest, $context, $minimal);
@@ -114,7 +114,7 @@ function xdiff_file_diff(string $old_file, string $new_file, string $dest, int $
  * @throws XdiffException
  *
  */
-function xdiff_file_patch_binary(string $file, string $patch, string $dest): void
+function xdiff_file_patch_binary(string $file, string $patch, string $dest)
 {
     error_clear_last();
     $result = \xdiff_file_patch_binary($file, $patch, $dest);
@@ -141,7 +141,7 @@ function xdiff_file_patch_binary(string $file, string $patch, string $dest): voi
  * @throws XdiffException
  *
  */
-function xdiff_file_rabdiff(string $old_file, string $new_file, string $dest): void
+function xdiff_file_rabdiff(string $old_file, string $new_file, string $dest)
 {
     error_clear_last();
     $result = \xdiff_file_rabdiff($old_file, $new_file, $dest);
@@ -219,7 +219,7 @@ function xdiff_string_patch_binary(string $str, string $patch): string
  * @throws XdiffException
  *
  */
-function xdiff_string_patch(string $str, string $patch, int $flags = null, ?string &$error = null): string
+function xdiff_string_patch(string $str, string $patch, int $flags = null, &$error = null): string
 {
     error_clear_last();
     if ($error !== null) {

@@ -117,7 +117,7 @@ function proc_get_status($process): array
  * @throws ExecException
  *
  */
-function proc_nice(int $increment): void
+function proc_nice(int $increment)
 {
     error_clear_last();
     $result = \proc_nice($increment);

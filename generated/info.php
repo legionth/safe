@@ -13,7 +13,7 @@ use Safe\Exceptions\InfoException;
  * @throws InfoException
  *
  */
-function cli_set_process_title(string $title): void
+function cli_set_process_title(string $title)
 {
     error_clear_last();
     $result = \cli_set_process_title($title);
@@ -77,7 +77,7 @@ function cli_set_process_title(string $title): void
  * @throws InfoException
  *
  */
-function dl(string $library): void
+function dl(string $library)
 {
     error_clear_last();
     $result = \dl($library);
@@ -192,7 +192,7 @@ function getmyuid(): int
  * @throws InfoException
  *
  */
-function getopt(string $options, array $longopts = null, ?int &$optind = null): array
+function getopt(string $options, array $longopts = null, &$optind = null): array
 {
     error_clear_last();
     if ($optind !== null) {
@@ -323,7 +323,7 @@ function ini_set(string $varname, $newvalue): string
  * @throws InfoException
  *
  */
-function phpcredits(int $flag = CREDITS_ALL): void
+function phpcredits(int $flag = CREDITS_ALL)
 {
     error_clear_last();
     $result = \phpcredits($flag);
@@ -433,7 +433,7 @@ function phpcredits(int $flag = CREDITS_ALL): void
  * @throws InfoException
  *
  */
-function phpinfo(int $what = INFO_ALL): void
+function phpinfo(int $what = INFO_ALL)
 {
     error_clear_last();
     $result = \phpinfo($what);
@@ -468,7 +468,7 @@ function phpinfo(int $what = INFO_ALL): void
  * @throws InfoException
  *
  */
-function putenv(string $setting): void
+function putenv(string $setting)
 {
     error_clear_last();
     $result = \putenv($setting);
@@ -516,7 +516,7 @@ function set_include_path(string $new_include_path): string
  * @throws InfoException
  *
  */
-function set_time_limit(int $seconds): void
+function set_time_limit(int $seconds)
 {
     error_clear_last();
     $result = \set_time_limit($seconds);

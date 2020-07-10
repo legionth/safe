@@ -20,7 +20,7 @@ use Safe\Exceptions\PcntlException;
  * @throws PcntlException
  *
  */
-function pcntl_exec(string $path, array $args = null, array $envs = null): void
+function pcntl_exec(string $path, array $args = null, array $envs = null)
 {
     error_clear_last();
     if ($envs !== null) {
@@ -83,7 +83,7 @@ function pcntl_getpriority(int $pid = null, int $process_identifier = PRIO_PROCE
  * @throws PcntlException
  *
  */
-function pcntl_setpriority(int $priority, int $pid = null, int $process_identifier = PRIO_PROCESS): void
+function pcntl_setpriority(int $priority, int $pid = null, int $process_identifier = PRIO_PROCESS)
 {
     error_clear_last();
     if ($process_identifier !== PRIO_PROCESS) {
@@ -107,7 +107,7 @@ function pcntl_setpriority(int $priority, int $pid = null, int $process_identifi
  * @throws PcntlException
  *
  */
-function pcntl_signal_dispatch(): void
+function pcntl_signal_dispatch()
 {
     error_clear_last();
     $result = \pcntl_signal_dispatch();
@@ -137,7 +137,7 @@ function pcntl_signal_dispatch(): void
  * @throws PcntlException
  *
  */
-function pcntl_sigprocmask(int $how, array $set, ?array &$oldset = null): void
+function pcntl_sigprocmask(int $how, array $set, &$oldset = null)
 {
     error_clear_last();
     $result = \pcntl_sigprocmask($how, $set, $oldset);

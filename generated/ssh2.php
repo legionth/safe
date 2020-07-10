@@ -13,7 +13,7 @@ use Safe\Exceptions\Ssh2Exception;
  * @throws Ssh2Exception
  *
  */
-function ssh2_auth_agent($session, string $username): void
+function ssh2_auth_agent($session, string $username)
 {
     error_clear_last();
     $result = \ssh2_auth_agent($session, $username);
@@ -39,7 +39,7 @@ function ssh2_auth_agent($session, string $username): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_auth_hostbased_file($session, string $username, string $hostname, string $pubkeyfile, string $privkeyfile, string $passphrase = null, string $local_username = null): void
+function ssh2_auth_hostbased_file($session, string $username, string $hostname, string $pubkeyfile, string $privkeyfile, string $passphrase = null, string $local_username = null)
 {
     error_clear_last();
     if ($local_username !== null) {
@@ -66,7 +66,7 @@ function ssh2_auth_hostbased_file($session, string $username, string $hostname, 
  * @throws Ssh2Exception
  *
  */
-function ssh2_auth_password($session, string $username, string $password): void
+function ssh2_auth_password($session, string $username, string $password)
 {
     error_clear_last();
     $result = \ssh2_auth_password($session, $username, $password);
@@ -91,7 +91,7 @@ function ssh2_auth_password($session, string $username, string $password): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_auth_pubkey_file($session, string $username, string $pubkeyfile, string $privkeyfile, string $passphrase = null): void
+function ssh2_auth_pubkey_file($session, string $username, string $pubkeyfile, string $privkeyfile, string $passphrase = null)
 {
     error_clear_last();
     if ($passphrase !== null) {
@@ -329,7 +329,7 @@ function ssh2_connect(string $host, int $port = 22, array $methods = null, array
  * @throws Ssh2Exception
  *
  */
-function ssh2_disconnect($session): void
+function ssh2_disconnect($session)
 {
     error_clear_last();
     $result = \ssh2_disconnect($session);
@@ -395,7 +395,7 @@ function ssh2_exec($session, string $command, string $pty = null, array $env = n
  * @throws Ssh2Exception
  *
  */
-function ssh2_publickey_add($pkey, string $algoname, string $blob, bool $overwrite = false, array $attributes = null): void
+function ssh2_publickey_add($pkey, string $algoname, string $blob, bool $overwrite = false, array $attributes = null)
 {
     error_clear_last();
     if ($attributes !== null) {
@@ -444,7 +444,7 @@ function ssh2_publickey_init($session)
  * @throws Ssh2Exception
  *
  */
-function ssh2_publickey_remove($pkey, string $algoname, string $blob): void
+function ssh2_publickey_remove($pkey, string $algoname, string $blob)
 {
     error_clear_last();
     $result = \ssh2_publickey_remove($pkey, $algoname, $blob);
@@ -464,7 +464,7 @@ function ssh2_publickey_remove($pkey, string $algoname, string $blob): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_scp_recv($session, string $remote_file, string $local_file): void
+function ssh2_scp_recv($session, string $remote_file, string $local_file)
 {
     error_clear_last();
     $result = \ssh2_scp_recv($session, $remote_file, $local_file);
@@ -486,7 +486,7 @@ function ssh2_scp_recv($session, string $remote_file, string $local_file): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_scp_send($session, string $local_file, string $remote_file, int $create_mode = 0644): void
+function ssh2_scp_send($session, string $local_file, string $remote_file, int $create_mode = 0644)
 {
     error_clear_last();
     $result = \ssh2_scp_send($session, $local_file, $remote_file, $create_mode);
@@ -506,7 +506,7 @@ function ssh2_scp_send($session, string $local_file, string $remote_file, int $c
  * @throws Ssh2Exception
  *
  */
-function ssh2_sftp_chmod($sftp, string $filename, int $mode): void
+function ssh2_sftp_chmod($sftp, string $filename, int $mode)
 {
     error_clear_last();
     $result = \ssh2_sftp_chmod($sftp, $filename, $mode);
@@ -531,7 +531,7 @@ function ssh2_sftp_chmod($sftp, string $filename, int $mode): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_sftp_mkdir($sftp, string $dirname, int $mode = 0777, bool $recursive = false): void
+function ssh2_sftp_mkdir($sftp, string $dirname, int $mode = 0777, bool $recursive = false)
 {
     error_clear_last();
     $result = \ssh2_sftp_mkdir($sftp, $dirname, $mode, $recursive);
@@ -550,7 +550,7 @@ function ssh2_sftp_mkdir($sftp, string $dirname, int $mode = 0777, bool $recursi
  * @throws Ssh2Exception
  *
  */
-function ssh2_sftp_rename($sftp, string $from, string $to): void
+function ssh2_sftp_rename($sftp, string $from, string $to)
 {
     error_clear_last();
     $result = \ssh2_sftp_rename($sftp, $from, $to);
@@ -571,7 +571,7 @@ function ssh2_sftp_rename($sftp, string $from, string $to): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_sftp_rmdir($sftp, string $dirname): void
+function ssh2_sftp_rmdir($sftp, string $dirname)
 {
     error_clear_last();
     $result = \ssh2_sftp_rmdir($sftp, $dirname);
@@ -591,7 +591,7 @@ function ssh2_sftp_rmdir($sftp, string $dirname): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_sftp_symlink($sftp, string $target, string $link): void
+function ssh2_sftp_symlink($sftp, string $target, string $link)
 {
     error_clear_last();
     $result = \ssh2_sftp_symlink($sftp, $target, $link);
@@ -609,7 +609,7 @@ function ssh2_sftp_symlink($sftp, string $target, string $link): void
  * @throws Ssh2Exception
  *
  */
-function ssh2_sftp_unlink($sftp, string $filename): void
+function ssh2_sftp_unlink($sftp, string $filename)
 {
     error_clear_last();
     $result = \ssh2_sftp_unlink($sftp, $filename);

@@ -11,7 +11,7 @@ use Safe\Exceptions\FileinfoException;
  * @throws FileinfoException
  *
  */
-function finfo_close($finfo): void
+function finfo_close($finfo)
 {
     error_clear_last();
     $result = \finfo_close($finfo);

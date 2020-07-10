@@ -133,7 +133,7 @@ function odbc_autocommit($connection_id, bool $OnOff = false)
  * @throws UodbcException
  *
  */
-function odbc_binmode(int $result_id, int $mode): void
+function odbc_binmode(int $result_id, int $mode)
 {
     error_clear_last();
     $result = \odbc_binmode($result_id, $mode);
@@ -244,7 +244,7 @@ function odbc_columns($connection_id, string $qualifier = null, string $schema =
  * @throws UodbcException
  *
  */
-function odbc_commit($connection_id): void
+function odbc_commit($connection_id)
 {
     error_clear_last();
     $result = \odbc_commit($connection_id);
@@ -322,7 +322,7 @@ function odbc_exec($connection_id, string $query_string, int $flags = null)
  * @throws UodbcException
  *
  */
-function odbc_execute($result_id, array $parameters_array = null): void
+function odbc_execute($result_id, array $parameters_array = null)
 {
     error_clear_last();
     if ($parameters_array !== null) {
@@ -350,7 +350,7 @@ function odbc_execute($result_id, array $parameters_array = null): void
  * @throws UodbcException
  *
  */
-function odbc_fetch_into($result_id, ?array &$result_array, int $rownumber = null): int
+function odbc_fetch_into($result_id, &$result_array, int $rownumber = null): int
 {
     error_clear_last();
     if ($rownumber !== null) {
@@ -573,7 +573,7 @@ function odbc_gettypeinfo($connection_id, int $data_type = null)
  * @throws UodbcException
  *
  */
-function odbc_longreadlen($result_id, int $length): void
+function odbc_longreadlen($result_id, int $length)
 {
     error_clear_last();
     $result = \odbc_longreadlen($result_id, $length);
@@ -701,7 +701,7 @@ function odbc_result($result_id, $field)
  * @throws UodbcException
  *
  */
-function odbc_rollback($connection_id): void
+function odbc_rollback($connection_id)
 {
     error_clear_last();
     $result = \odbc_rollback($connection_id);
@@ -741,7 +741,7 @@ function odbc_rollback($connection_id): void
  * @throws UodbcException
  *
  */
-function odbc_setoption($id, int $function, int $option, int $param): void
+function odbc_setoption($id, int $function, int $option, int $param)
 {
     error_clear_last();
     $result = \odbc_setoption($id, $function, $option, $param);

@@ -12,7 +12,7 @@ use Safe\Exceptions\IbaseException;
  * @throws IbaseException
  *
  */
-function fbird_blob_cancel($blob_handle): void
+function fbird_blob_cancel($blob_handle)
 {
     error_clear_last();
     $result = \fbird_blob_cancel($blob_handle);
@@ -34,7 +34,7 @@ function fbird_blob_cancel($blob_handle): void
  * @throws IbaseException
  *
  */
-function ibase_add_user($service_handle, string $user_name, string $password, string $first_name = null, string $middle_name = null, string $last_name = null): void
+function ibase_add_user($service_handle, string $user_name, string $password, string $first_name = null, string $middle_name = null, string $last_name = null)
 {
     error_clear_last();
     if ($last_name !== null) {
@@ -98,7 +98,7 @@ function ibase_backup($service_handle, string $source_db, string $dest_file, int
  * @throws IbaseException
  *
  */
-function ibase_blob_cancel($blob_handle): void
+function ibase_blob_cancel($blob_handle)
 {
     error_clear_last();
     $result = \ibase_blob_cancel($blob_handle);
@@ -163,7 +163,7 @@ function ibase_blob_get($blob_handle, int $len): string
  * @throws IbaseException
  *
  */
-function ibase_close($connection_id = null): void
+function ibase_close($connection_id = null)
 {
     error_clear_last();
     $result = \ibase_close($connection_id);
@@ -186,7 +186,7 @@ function ibase_close($connection_id = null): void
  * @throws IbaseException
  *
  */
-function ibase_commit_ret($link_or_trans_identifier = null): void
+function ibase_commit_ret($link_or_trans_identifier = null)
 {
     error_clear_last();
     $result = \ibase_commit_ret($link_or_trans_identifier);
@@ -207,7 +207,7 @@ function ibase_commit_ret($link_or_trans_identifier = null): void
  * @throws IbaseException
  *
  */
-function ibase_commit($link_or_trans_identifier = null): void
+function ibase_commit($link_or_trans_identifier = null)
 {
     error_clear_last();
     $result = \ibase_commit($link_or_trans_identifier);
@@ -287,7 +287,7 @@ function ibase_connect(string $database = null, string $username = null, string 
  * @throws IbaseException
  *
  */
-function ibase_delete_user($service_handle, string $user_name): void
+function ibase_delete_user($service_handle, string $user_name)
 {
     error_clear_last();
     $result = \ibase_delete_user($service_handle, $user_name);
@@ -306,7 +306,7 @@ function ibase_delete_user($service_handle, string $user_name): void
  * @throws IbaseException
  *
  */
-function ibase_drop_db($connection = null): void
+function ibase_drop_db($connection = null)
 {
     error_clear_last();
     $result = \ibase_drop_db($connection);
@@ -326,7 +326,7 @@ function ibase_drop_db($connection = null): void
  * @throws IbaseException
  *
  */
-function ibase_free_event_handler($event): void
+function ibase_free_event_handler($event)
 {
     error_clear_last();
     $result = \ibase_free_event_handler($event);
@@ -343,7 +343,7 @@ function ibase_free_event_handler($event): void
  * @throws IbaseException
  *
  */
-function ibase_free_query($query): void
+function ibase_free_query($query)
 {
     error_clear_last();
     $result = \ibase_free_query($query);
@@ -361,7 +361,7 @@ function ibase_free_query($query): void
  * @throws IbaseException
  *
  */
-function ibase_free_result($result_identifier): void
+function ibase_free_result($result_identifier)
 {
     error_clear_last();
     $result = \ibase_free_result($result_identifier);
@@ -381,7 +381,7 @@ function ibase_free_result($result_identifier): void
  * @throws IbaseException
  *
  */
-function ibase_maintain_db($service_handle, string $db, int $action, int $argument = 0): void
+function ibase_maintain_db($service_handle, string $db, int $action, int $argument = 0)
 {
     error_clear_last();
     $result = \ibase_maintain_db($service_handle, $db, $action, $argument);
@@ -403,7 +403,7 @@ function ibase_maintain_db($service_handle, string $db, int $action, int $argume
  * @throws IbaseException
  *
  */
-function ibase_modify_user($service_handle, string $user_name, string $password, string $first_name = null, string $middle_name = null, string $last_name = null): void
+function ibase_modify_user($service_handle, string $user_name, string $password, string $first_name = null, string $middle_name = null, string $last_name = null)
 {
     error_clear_last();
     if ($last_name !== null) {
@@ -430,7 +430,7 @@ function ibase_modify_user($service_handle, string $user_name, string $password,
  * @throws IbaseException
  *
  */
-function ibase_name_result($result, string $name): void
+function ibase_name_result($result, string $name)
 {
     error_clear_last();
     $result = \ibase_name_result($result, $name);
@@ -563,7 +563,7 @@ function ibase_restore($service_handle, string $source_file, string $dest_db, in
  * @throws IbaseException
  *
  */
-function ibase_rollback_ret($link_or_trans_identifier = null): void
+function ibase_rollback_ret($link_or_trans_identifier = null)
 {
     error_clear_last();
     $result = \ibase_rollback_ret($link_or_trans_identifier);
@@ -584,7 +584,7 @@ function ibase_rollback_ret($link_or_trans_identifier = null): void
  * @throws IbaseException
  *
  */
-function ibase_rollback($link_or_trans_identifier = null): void
+function ibase_rollback($link_or_trans_identifier = null)
 {
     error_clear_last();
     $result = \ibase_rollback($link_or_trans_identifier);
@@ -623,7 +623,7 @@ function ibase_service_attach(string $host, string $dba_username, string $dba_pa
  * @throws IbaseException
  *
  */
-function ibase_service_detach($service_handle): void
+function ibase_service_detach($service_handle)
 {
     error_clear_last();
     $result = \ibase_service_detach($service_handle);

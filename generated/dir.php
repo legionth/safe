@@ -12,7 +12,7 @@ use Safe\Exceptions\DirException;
  * @throws DirException
  *
  */
-function chdir(string $directory): void
+function chdir(string $directory)
 {
     error_clear_last();
     $result = \chdir($directory);
@@ -35,7 +35,7 @@ function chdir(string $directory): void
  * @throws DirException
  *
  */
-function chroot(string $directory): void
+function chroot(string $directory)
 {
     error_clear_last();
     $result = \chroot($directory);
@@ -109,7 +109,7 @@ function opendir(string $path, $context = null)
  * @throws DirException
  *
  */
-function rewinddir($dir_handle = null): void
+function rewinddir($dir_handle = null)
 {
     error_clear_last();
     if ($dir_handle !== null) {

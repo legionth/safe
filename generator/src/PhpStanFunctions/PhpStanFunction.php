@@ -40,7 +40,7 @@ class PhpStanFunction
         return $this->parameters;
     }
 
-    public function getParameter(string $name): ?PhpStanParameter
+    public function getParameter(string $name)
     {
         return $this->parameters[$name] ?? null;
     }

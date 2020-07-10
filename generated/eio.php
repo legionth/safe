@@ -297,7 +297,7 @@ function eio_dup2($fd, $fd2, int $pri = EIO_PRI_DEFAULT, callable $callback = nu
  * @throws EioException
  *
  */
-function eio_event_loop(): void
+function eio_event_loop()
 {
     error_clear_last();
     $result = \eio_event_loop();

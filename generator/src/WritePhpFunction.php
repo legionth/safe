@@ -182,7 +182,7 @@ class WritePhpFunction
         return $functionCall;
     }
 
-    private function defaultValueToString(?string $defaultValue): string
+    private function defaultValueToString( $defaultValue): string
     {
         if ($defaultValue === null) {
             return 'null';

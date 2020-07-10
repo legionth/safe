@@ -11,7 +11,7 @@ use Safe\Exceptions\ZipException;
  * @throws ZipException
  *
  */
-function zip_entry_close($zip_entry): void
+function zip_entry_close($zip_entry)
 {
     error_clear_last();
     $result = \zip_entry_close($zip_entry);
@@ -35,7 +35,7 @@ function zip_entry_close($zip_entry): void
  * @throws ZipException
  *
  */
-function zip_entry_open($zip, $zip_entry, string $mode = null): void
+function zip_entry_open($zip, $zip_entry, string $mode = null)
 {
     error_clear_last();
     if ($mode !== null) {

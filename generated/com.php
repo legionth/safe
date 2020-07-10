@@ -26,7 +26,7 @@ use Safe\Exceptions\ComException;
  * @throws ComException
  *
  */
-function com_event_sink(object $comobject, object $sinkobject, $sinkinterface = null): void
+function com_event_sink($comobject, $sinkobject, $sinkinterface = null)
 {
     error_clear_last();
     if ($sinkinterface !== null) {
@@ -92,7 +92,7 @@ function com_event_sink(object $comobject, object $sinkobject, $sinkinterface = 
  * @throws ComException
  *
  */
-function com_load_typelib(string $typelib_name, bool $case_sensitive = true): void
+function com_load_typelib(string $typelib_name, bool $case_sensitive = true)
 {
     error_clear_last();
     $result = \com_load_typelib($typelib_name, $case_sensitive);
@@ -117,7 +117,7 @@ function com_load_typelib(string $typelib_name, bool $case_sensitive = true): vo
  * @throws ComException
  *
  */
-function com_print_typeinfo(object $comobject, string $dispinterface = null, bool $wantsink = false): void
+function com_print_typeinfo($comobject, string $dispinterface = null, bool $wantsink = false)
 {
     error_clear_last();
     $result = \com_print_typeinfo($comobject, $dispinterface, $wantsink);

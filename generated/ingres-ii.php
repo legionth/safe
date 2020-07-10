@@ -27,7 +27,7 @@ use Safe\Exceptions\IngresiiException;
  * @throws IngresiiException
  *
  */
-function ingres_autocommit($link): void
+function ingres_autocommit($link)
 {
     error_clear_last();
     $result = \ingres_autocommit($link);
@@ -49,7 +49,7 @@ function ingres_autocommit($link): void
  * @throws IngresiiException
  *
  */
-function ingres_close($link): void
+function ingres_close($link)
 {
     error_clear_last();
     $result = \ingres_close($link);
@@ -78,7 +78,7 @@ function ingres_close($link): void
  * @throws IngresiiException
  *
  */
-function ingres_commit($link): void
+function ingres_commit($link)
 {
     error_clear_last();
     $result = \ingres_commit($link);
@@ -364,7 +364,7 @@ function ingres_connect(string $database = null, string $username = null, string
  * @throws IngresiiException
  *
  */
-function ingres_execute($result, array $params = null, string $types = null): void
+function ingres_execute($result, array $params = null, string $types = null)
 {
     error_clear_last();
     if ($types !== null) {
@@ -467,7 +467,7 @@ function ingres_field_type($result, int $index): string
  * @throws IngresiiException
  *
  */
-function ingres_free_result($result): void
+function ingres_free_result($result)
 {
     error_clear_last();
     $result = \ingres_free_result($result);
@@ -539,7 +539,7 @@ function ingres_pconnect(string $database = null, string $username = null, strin
  * @throws IngresiiException
  *
  */
-function ingres_result_seek($result, int $position): void
+function ingres_result_seek($result, int $position)
 {
     error_clear_last();
     $result = \ingres_result_seek($result, $position);
@@ -561,7 +561,7 @@ function ingres_result_seek($result, int $position): void
  * @throws IngresiiException
  *
  */
-function ingres_rollback($link): void
+function ingres_rollback($link)
 {
     error_clear_last();
     $result = \ingres_rollback($link);
@@ -710,7 +710,7 @@ function ingres_rollback($link): void
  * @throws IngresiiException
  *
  */
-function ingres_set_environment($link, array $options): void
+function ingres_set_environment($link, array $options)
 {
     error_clear_last();
     $result = \ingres_set_environment($link, $options);

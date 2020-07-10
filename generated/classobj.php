@@ -15,7 +15,7 @@ use Safe\Exceptions\ClassobjException;
  * @throws ClassobjException
  *
  */
-function class_alias(string $original, string $alias, bool $autoload = true): void
+function class_alias(string $original, string $alias, bool $autoload = true)
 {
     error_clear_last();
     $result = \class_alias($original, $alias, $autoload);

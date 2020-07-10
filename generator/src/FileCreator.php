@@ -14,7 +14,7 @@ class FileCreator
      * @param Method[] $functions
      * @param string $path
      */
-    public function generatePhpFile(array $functions, string $path): void
+    public function generatePhpFile(array $functions, string $path)
     {
         $path = rtrim($path, '/').'/';
         $phpFunctionsByModule = [];
@@ -65,7 +65,7 @@ use Safe\\Exceptions\\".self::toExceptionName($module). ';
      * @param Method[] $functions
      * @param string $path
      */
-    public function generateFunctionsList(array $functions, string $path): void
+    public function generateFunctionsList(array $functions, string $path)
     {
         $functionNames = $this->getFunctionsNameList($functions);
         $stream = fopen($path, 'w');
@@ -87,7 +87,7 @@ return [\n");
      * @param Method[] $functions
      * @param string $path
      */
-    public function generateRectorFileForZeroPointSeven(array $functions, string $path): void
+    public function generateRectorFileForZeroPointSeven(array $functions, string $path)
     {
         $functionNames = $this->getFunctionsNameList($functions);
 
@@ -115,7 +115,7 @@ TXT;
         fclose($stream);
     }
 
-    public function createExceptionFile(string $moduleName): void
+    public function createExceptionFile(string $moduleName)
     {
         $exceptionName = self::toExceptionName($moduleName);
         if (!file_exists(__DIR__.'/../../lib/Exceptions/'.$exceptionName.'.php')) {

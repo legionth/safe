@@ -139,24 +139,6 @@ class DateTimeImmutable extends \DateTimeImmutable
     }
 
     /**
-     * @param int $hour
-     * @param int $minute
-     * @param int $second
-     * @param int $microseconds
-     * @return DateTimeImmutable
-     * @throws DatetimeException
-     */
-    public function setTime($hour, $minute, $second = 0, $microseconds = 0): self
-    {
-        /** @var \DateTimeImmutable|false $result */
-        $result = $this->innerDateTime->setTime($hour, $minute, $second, $microseconds);
-        if ($result === false) {
-            throw DatetimeException::createFromPhpError();
-        }
-        return self::createFromRegular($result);
-    }
-
-    /**
      * @param int $unixtimestamp
      * @return DateTimeImmutable
      * @throws DatetimeException

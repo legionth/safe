@@ -70,7 +70,7 @@ class PhpStanType
         $this->falsable = $falsable;
     }
     
-    public function getDocBlockType(?int $errorType = null): string
+    public function getDocBlockType($errorType = null): string
     {
         $returnTypes = $this->types;
         //add back either null or false to the return types unless the target function return null or false on error (only relevant on return type)
@@ -88,7 +88,7 @@ class PhpStanType
         return $type;
     }
 
-    public function getSignatureType(?int $errorType = null): string
+    public function getSignatureType($errorType = null): string
     {
         //We edit the return type depending of the "onErrorType" of the function. For example, a function that is both nullable and "nullsy" will created a non nullable safe function. Only relevant on return type.
         $nullable = $errorType === Method::NULLSY_TYPE ? false : $this->nullable;
@@ -101,7 +101,7 @@ class PhpStanType
         
         foreach ($types as &$type) {
             if (\strpos($type, 'callable(') > -1) {
-                $type = 'callable'; //strip callable type of its possible parenthesis and return (ex: callable(): void)
+                $type = 'callable'; //strip callable type of its possible parenthesis and return (ex: callable())
             } elseif (\strpos($type, 'array<') !== false || \strpos($type, 'array{') !== false) {
                 $type = 'array'; //typed array has to be untyped
             } elseif (\strpos($type, '[]') !== false) {

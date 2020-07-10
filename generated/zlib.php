@@ -134,7 +134,7 @@ function deflate_init(int $encoding, array $options = null)
  * @throws ZlibException
  *
  */
-function gzclose($zp): void
+function gzclose($zp)
 {
     error_clear_last();
     $result = \gzclose($zp);
@@ -375,7 +375,7 @@ function gzpassthru($zp): int
  * @throws ZlibException
  *
  */
-function gzrewind($zp): void
+function gzrewind($zp)
 {
     error_clear_last();
     $result = \gzrewind($zp);
@@ -409,42 +409,6 @@ function gzuncompress(string $data, int $length = 0): string
 }
 
 
-/**
- *
- *
- * @param resource $resource
- * @return int Returns number of bytes read so far.
- * @throws ZlibException
- *
- */
-function inflate_get_read_len($resource): int
-{
-    error_clear_last();
-    $result = \inflate_get_read_len($resource);
-    if ($result === false) {
-        throw ZlibException::createFromPhpError();
-    }
-    return $result;
-}
-
-
-/**
- * Usually returns either ZLIB_OK or ZLIB_STREAM_END.
- *
- * @param resource $resource
- * @return int Returns decompression status.
- * @throws ZlibException
- *
- */
-function inflate_get_status($resource): int
-{
-    error_clear_last();
-    $result = \inflate_get_status($resource);
-    if ($result === false) {
-        throw ZlibException::createFromPhpError();
-    }
-    return $result;
-}
 
 
 /**

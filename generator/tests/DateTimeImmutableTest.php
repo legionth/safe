@@ -9,20 +9,20 @@ use Safe\Exceptions\DatetimeException;
 
 class DateTimeImmutableTest extends TestCase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         require_once __DIR__ . '/../../lib/Exceptions/SafeExceptionInterface.php';
         require_once __DIR__ . '/../../generated/Exceptions/DatetimeException.php';
         require_once __DIR__ . '/../../lib/DateTimeImmutable.php';
     }
 
-    public function testCreateFromFormatCrashOnError(): void
+    public function testCreateFromFormatCrashOnError()
     {
         $this->expectException(DatetimeException::class);
         $datetime = DateTimeImmutable::createFromFormat('lol', 'super');
     }
 
-    public function testConstructorPreserveTimeAndTimezone(): void
+    public function testConstructorPreserveTimeAndTimezone()
     {
         $timezone = new \DateTimeZone('Pacific/Chatham');
         $datetime = new DateTimeImmutable('now', $timezone);
@@ -30,7 +30,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($timezone, $datetime->getTimezone());
     }
 
-    public function testCreateFromFormatPreserveTimeAndTimezone(): void
+    public function testCreateFromFormatPreserveTimeAndTimezone()
     {
         $timezone = new \DateTimeZone('Pacific/Chatham');
         $datetime = DateTimeImmutable::createFromFormat('d-m-Y', '20-03-2006', $timezone);
@@ -39,7 +39,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($timezone, $datetime->getTimezone());
     }
 
-    public function testSafeDatetimeImmutableIsImmutable(): void
+    public function testSafeDatetimeImmutableIsImmutable()
     {
         $datetime1 = new DateTimeImmutable();
         $datetime2 = $datetime1->add(new \DateInterval('P1W'));
@@ -47,7 +47,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertNotSame($datetime1, $datetime2);
     }
 
-    public function testSetDate(): void
+    public function testSetDate()
     {
         $datetime = new \DateTimeImmutable();
         $safeDatetime = new DateTimeImmutable();
@@ -57,7 +57,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($datetime->format('Y-m-d'), $safeDatetime->format('Y-m-d'));
     }
 
-    public function testSetIsoDate(): void
+    public function testSetIsoDate()
     {
         $datetime = new \DateTimeImmutable();
         $safeDatetime = new DateTimeImmutable();
@@ -67,7 +67,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($datetime->format('Y-m-d'), $safeDatetime->format('Y-m-d'));
     }
 
-    public function testModify(): void
+    public function testModify()
     {
         $datetime = new \DateTimeImmutable();
         $datetime = $datetime->setDate(2017, 4, 6);
@@ -79,7 +79,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($datetime->format('j-n-Y'), $safeDatime->format('j-n-Y'));
     }
 
-    public function testSetTimestamp(): void
+    public function testSetTimestamp()
     {
         $datetime = new \DateTimeImmutable('2000-01-01');
         $safeDatime = new DateTimeImmutable('2000-01-01');
@@ -89,7 +89,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($datetime->getTimestamp(), $safeDatime->getTimestamp());
     }
 
-    public function testSetTimezone(): void
+    public function testSetTimezone()
     {
         $timezone = new \DateTimeZone('Pacific/Chatham');
         $datetime = new \DateTimeImmutable('2000-01-01');
@@ -100,17 +100,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($datetime->getTimezone(), $safeDatime->getTimezone());
     }
 
-    public function testSetTime(): void
-    {
-        $datetime = new \DateTimeImmutable('2000-01-01');
-        $safeDatime = new DateTimeImmutable('2000-01-01');
-        $datetime = $datetime->setTime(2, 3, 1, 5);
-        $safeDatime = $safeDatime->setTime(2, 3, 1, 5);
-
-        $this->assertEquals($datetime->format('H-i-s-u'), $safeDatime->format('H-i-s-u'));
-    }
-
-    public function testAdd(): void
+    public function testAdd()
     {
         $interval = new \DateInterval('P1M');
         $datetime = new \DateTimeImmutable('2000-01-01');
@@ -121,7 +111,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($datetime->getTimestamp(), $safeDatime->getTimestamp());
     }
 
-    public function testSub(): void
+    public function testSub()
     {
         $interval = new \DateInterval('P1M');
         $datetime = new \DateTimeImmutable('2000-01-01');
@@ -143,7 +133,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($safeDatetime->getTimezone(), $newDatetime->getTimezone());
     }
 
-    public function testComparaison(): void
+    public function testComparaison()
     {
         $safeDateTime = new \Safe\DateTimeImmutable();
         $phpDateTime = new \DateTimeImmutable();
@@ -154,7 +144,7 @@ class DateTimeImmutableTest extends TestCase
         $this->assertEquals($b, $a);
     }
 
-    public function testEquals(): void
+    public function testEquals()
     {
         $phpDateTime = new \DateTimeImmutable();
 

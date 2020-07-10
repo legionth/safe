@@ -14,7 +14,7 @@ use Safe\Exceptions\SwooleException;
  * @throws SwooleException
  *
  */
-function swoole_async_write(string $filename, string $content, int $offset = null, callable $callback = null): void
+function swoole_async_write(string $filename, string $content, int $offset = null, callable $callback = null)
 {
     error_clear_last();
     if ($callback !== null) {
@@ -40,7 +40,7 @@ function swoole_async_write(string $filename, string $content, int $offset = nul
  * @throws SwooleException
  *
  */
-function swoole_async_writefile(string $filename, string $content, callable $callback = null, int $flags = 0): void
+function swoole_async_writefile(string $filename, string $content, callable $callback = null, int $flags = 0)
 {
     error_clear_last();
     if ($flags !== 0) {
@@ -63,7 +63,7 @@ function swoole_async_writefile(string $filename, string $content, callable $cal
  * @throws SwooleException
  *
  */
-function swoole_event_defer(callable $callback): void
+function swoole_event_defer(callable $callback)
 {
     error_clear_last();
     $result = \swoole_event_defer($callback);
@@ -80,7 +80,7 @@ function swoole_event_defer(callable $callback): void
  * @throws SwooleException
  *
  */
-function swoole_event_del(int $fd): void
+function swoole_event_del(int $fd)
 {
     error_clear_last();
     $result = \swoole_event_del($fd);
@@ -98,7 +98,7 @@ function swoole_event_del(int $fd): void
  * @throws SwooleException
  *
  */
-function swoole_event_write(int $fd, string $data): void
+function swoole_event_write(int $fd, string $data)
 {
     error_clear_last();
     $result = \swoole_event_write($fd, $data);

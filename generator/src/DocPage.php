@@ -26,7 +26,7 @@ class DocPage
     {
         if (preg_match('/&warn\.deprecated\.function-(\d+-\d+-\d+)\.removed-(\d+-\d+-\d+)/', $file, $matches)) {
             $removedVersion = $matches[2];
-            [$major, $minor] = explode('-', $removedVersion);
+            list($major, $minor) = explode('-', $removedVersion);
             if ($major < 7 || ($major == 7 && $minor == 0)) {
                 return true;
             }
@@ -34,7 +34,7 @@ class DocPage
 
         if (preg_match('/&warn\.removed\.function-(\d+-\d+-\d+)/', $file, $matches) && isset($matches[2])) {
             $removedVersion = $matches[2];
-            [$major, $minor] = explode('-', $removedVersion);
+            list($major, $minor) = explode('-', $removedVersion);
             if ($major < 7 || ($major == 7 && $minor == 0)) {
                 return true;
             }
@@ -252,7 +252,7 @@ class DocPage
         return $result;
     }
 
-    public static function buildEntities(): void
+    public static function buildEntities()
     {
         $file1 = \file_get_contents(__DIR__.'/../doc/doc-en/en/language-defs.ent') ?: '';
         $file2 = \file_get_contents(__DIR__.'/../doc/doc-en/en/language-snippets.ent') ?: '';
