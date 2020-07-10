@@ -85,7 +85,7 @@ function xml_parser_create(string $encoding = null)
  * @throws XmlException
  *
  */
-function xml_set_object($parser, object &$object): void
+function xml_set_object($parser, object &$object)
 {
     error_clear_last();
     $result = \xml_set_object($parser, $object);

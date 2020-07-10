@@ -554,26 +554,6 @@ function curl_init(string $url = null)
 
 
 /**
- * Return an integer containing the last multi curl error number.
- *
- * @param resource $mh A cURL multi handle returned by
- * curl_multi_init.
- * @return int Return an integer containing the last multi curl error number.
- * @throws CurlException
- *
- */
-function curl_multi_errno($mh): int
-{
-    error_clear_last();
-    $result = \curl_multi_errno($mh);
-    if ($result === false) {
-        throw CurlException::createFromPhpError();
-    }
-    return $result;
-}
-
-
-/**
  * Ask the multi handle if there are any messages or information from the individual transfers.
  * Messages may include information such as an error code from the transfer or just the fact
  * that a transfer is completed.
@@ -618,7 +598,7 @@ function curl_multi_errno($mh): int
  * @throws CurlException
  *
  */
-function curl_multi_info_read($mh, ?int &$msgs_in_queue = null): array
+function curl_multi_info_read($mh, &$msgs_in_queue = null): array
 {
     error_clear_last();
     $result = \curl_multi_info_read($mh, $msgs_in_queue);
@@ -3031,32 +3011,13 @@ function curl_multi_init()
  * @throws CurlException
  *
  */
-function curl_setopt($ch, int $option, $value): void
+function curl_setopt($ch, int $option, $value)
 {
     error_clear_last();
     $result = \curl_setopt($ch, $option, $value);
     if ($result === false) {
         throw CurlException::createFromCurlResource($ch);
     }
-}
-
-
-/**
- * Return an integer containing the last share curl error number.
- *
- * @param resource $sh A cURL share handle returned by curl_share_init.
- * @return int Returns an integer containing the last share curl error number.
- * @throws CurlException
- *
- */
-function curl_share_errno($sh): int
-{
-    error_clear_last();
-    $result = \curl_share_errno($sh);
-    if ($result === false) {
-        throw CurlException::createFromPhpError();
-    }
-    return $result;
 }
 
 
@@ -3125,7 +3086,7 @@ function curl_share_errno($sh): int
  * @throws CurlException
  *
  */
-function curl_share_setopt($sh, int $option, string $value): void
+function curl_share_setopt($sh, int $option, string $value)
 {
     error_clear_last();
     $result = \curl_share_setopt($sh, $option, $value);

@@ -6,14 +6,14 @@ use PHPStan\Testing\TestCase;
 
 class PhpStanFunctionMapReaderTest extends TestCase
 {
-    public function testHas(): void
+    public function testHas()
     {
         $mapReader = new PhpStanFunctionMapReader();
         $this->assertTrue($mapReader->hasFunction('strpos'));
         $this->assertFalse($mapReader->hasFunction('foobar'));
     }
 
-    public function testGet(): void
+    public function testGet()
     {
         $mapReader = new PhpStanFunctionMapReader();
         $function = $mapReader->getFunction('apcu_fetch');

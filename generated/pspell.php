@@ -12,7 +12,7 @@ use Safe\Exceptions\PspellException;
  * @throws PspellException
  *
  */
-function pspell_add_to_personal(int $dictionary_link, string $word): void
+function pspell_add_to_personal(int $dictionary_link, string $word)
 {
     error_clear_last();
     $result = \pspell_add_to_personal($dictionary_link, $word);
@@ -30,7 +30,7 @@ function pspell_add_to_personal(int $dictionary_link, string $word): void
  * @throws PspellException
  *
  */
-function pspell_add_to_session(int $dictionary_link, string $word): void
+function pspell_add_to_session(int $dictionary_link, string $word)
 {
     error_clear_last();
     $result = \pspell_add_to_session($dictionary_link, $word);
@@ -47,7 +47,7 @@ function pspell_add_to_session(int $dictionary_link, string $word): void
  * @throws PspellException
  *
  */
-function pspell_clear_session(int $dictionary_link): void
+function pspell_clear_session(int $dictionary_link)
 {
     error_clear_last();
     $result = \pspell_clear_session($dictionary_link);
@@ -119,7 +119,7 @@ function pspell_config_create(string $language, string $spelling = null, string 
  * @throws PspellException
  *
  */
-function pspell_config_data_dir(int $conf, string $directory): void
+function pspell_config_data_dir(int $conf, string $directory)
 {
     error_clear_last();
     $result = \pspell_config_data_dir($conf, $directory);
@@ -139,7 +139,7 @@ function pspell_config_data_dir(int $conf, string $directory): void
  * @throws PspellException
  *
  */
-function pspell_config_dict_dir(int $conf, string $directory): void
+function pspell_config_dict_dir(int $conf, string $directory)
 {
     error_clear_last();
     $result = \pspell_config_dict_dir($conf, $directory);
@@ -157,7 +157,7 @@ function pspell_config_dict_dir(int $conf, string $directory): void
  * @throws PspellException
  *
  */
-function pspell_config_ignore(int $dictionary_link, int $n): void
+function pspell_config_ignore(int $dictionary_link, int $n)
 {
     error_clear_last();
     $result = \pspell_config_ignore($dictionary_link, $n);
@@ -195,7 +195,7 @@ function pspell_config_ignore(int $dictionary_link, int $n): void
  * @throws PspellException
  *
  */
-function pspell_config_mode(int $dictionary_link, int $mode): void
+function pspell_config_mode(int $dictionary_link, int $mode)
 {
     error_clear_last();
     $result = \pspell_config_mode($dictionary_link, $mode);
@@ -220,7 +220,7 @@ function pspell_config_mode(int $dictionary_link, int $mode): void
  * @throws PspellException
  *
  */
-function pspell_config_personal(int $dictionary_link, string $file): void
+function pspell_config_personal(int $dictionary_link, string $file)
 {
     error_clear_last();
     $result = \pspell_config_personal($dictionary_link, $file);
@@ -247,7 +247,7 @@ function pspell_config_personal(int $dictionary_link, string $file): void
  * @throws PspellException
  *
  */
-function pspell_config_repl(int $dictionary_link, string $file): void
+function pspell_config_repl(int $dictionary_link, string $file)
 {
     error_clear_last();
     $result = \pspell_config_repl($dictionary_link, $file);
@@ -273,7 +273,7 @@ function pspell_config_repl(int $dictionary_link, string $file): void
  * @throws PspellException
  *
  */
-function pspell_config_runtogether(int $dictionary_link, bool $flag): void
+function pspell_config_runtogether(int $dictionary_link, bool $flag)
 {
     error_clear_last();
     $result = \pspell_config_runtogether($dictionary_link, $flag);
@@ -300,7 +300,7 @@ function pspell_config_runtogether(int $dictionary_link, bool $flag): void
  * @throws PspellException
  *
  */
-function pspell_config_save_repl(int $dictionary_link, bool $flag): void
+function pspell_config_save_repl(int $dictionary_link, bool $flag)
 {
     error_clear_last();
     $result = \pspell_config_save_repl($dictionary_link, $flag);
@@ -421,7 +421,7 @@ function pspell_new(string $language, string $spelling = null, string $jargon = 
  * @throws PspellException
  *
  */
-function pspell_save_wordlist(int $dictionary_link): void
+function pspell_save_wordlist(int $dictionary_link)
 {
     error_clear_last();
     $result = \pspell_save_wordlist($dictionary_link);
@@ -441,7 +441,7 @@ function pspell_save_wordlist(int $dictionary_link): void
  * @throws PspellException
  *
  */
-function pspell_store_replacement(int $dictionary_link, string $misspelled, string $correct): void
+function pspell_store_replacement(int $dictionary_link, string $misspelled, string $correct)
 {
     error_clear_last();
     $result = \pspell_store_replacement($dictionary_link, $misspelled, $correct);

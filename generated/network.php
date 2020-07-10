@@ -11,7 +11,7 @@ use Safe\Exceptions\NetworkException;
  * @throws NetworkException
  *
  */
-function closelog(): void
+function closelog()
 {
     error_clear_last();
     $result = \closelog();
@@ -243,7 +243,7 @@ function closelog(): void
  * @throws NetworkException
  *
  */
-function dns_get_record(string $hostname, int $type = DNS_ANY, ?array &$authns = null, ?array &$addtl = null, bool $raw = false): array
+function dns_get_record(string $hostname, int $type = DNS_ANY, &$authns = null, &$addtl = null, bool $raw = false): array
 {
     error_clear_last();
     $result = \dns_get_record($hostname, $type, $authns, $addtl, $raw);
@@ -302,7 +302,7 @@ function dns_get_record(string $hostname, int $type = DNS_ANY, ?array &$authns =
  * @throws NetworkException
  *
  */
-function fsockopen(string $hostname, int $port = -1, ?int &$errno = null, ?string &$errstr = null, float $timeout = null)
+function fsockopen(string $hostname, int $port = -1, &$errno = null, &$errstr = null, float $timeout = null)
 {
     error_clear_last();
     if ($timeout !== null) {
@@ -391,7 +391,7 @@ function getprotobynumber(int $number): string
  * @throws NetworkException
  *
  */
-function header_register_callback(callable $callback): void
+function header_register_callback(callable $callback)
 {
     error_clear_last();
     $result = \header_register_callback($callback);
@@ -552,7 +552,7 @@ function inet_ntop(string $in_addr): string
  * @throws NetworkException
  *
  */
-function openlog(string $ident, int $option, int $facility): void
+function openlog(string $ident, int $option, int $facility)
 {
     error_clear_last();
     $result = \openlog($ident, $option, $facility);
@@ -627,7 +627,7 @@ function openlog(string $ident, int $option, int $facility): void
  * @throws NetworkException
  *
  */
-function syslog(int $priority, string $message): void
+function syslog(int $priority, string $message)
 {
     error_clear_last();
     $result = \syslog($priority, $message);

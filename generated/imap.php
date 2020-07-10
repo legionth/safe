@@ -22,7 +22,7 @@ use Safe\Exceptions\ImapException;
  * @throws ImapException
  *
  */
-function imap_append($imap_stream, string $mailbox, string $message, string $options = null, string $internal_date = null): void
+function imap_append($imap_stream, string $mailbox, string $message, string $options = null, string $internal_date = null): fvoid
 {
     error_clear_last();
     $result = \imap_append($imap_stream, $mailbox, $message, $options, $internal_date);
@@ -107,7 +107,7 @@ function imap_check($imap_stream): \stdClass
  * @throws ImapException
  *
  */
-function imap_clearflag_full($imap_stream, string $sequence, string $flag, int $options = 0): void
+function imap_clearflag_full($imap_stream, string $sequence, string $flag, int $options = 0)
 {
     error_clear_last();
     $result = \imap_clearflag_full($imap_stream, $sequence, $flag, $options);
@@ -129,7 +129,7 @@ function imap_clearflag_full($imap_stream, string $sequence, string $flag, int $
  * @throws ImapException
  *
  */
-function imap_close($imap_stream, int $flag = 0): void
+function imap_close($imap_stream, int $flag = 0)
 {
     error_clear_last();
     $result = \imap_close($imap_stream, $flag);
@@ -150,7 +150,7 @@ function imap_close($imap_stream, int $flag = 0): void
  * @throws ImapException
  *
  */
-function imap_createmailbox($imap_stream, string $mailbox): void
+function imap_createmailbox($imap_stream, string $mailbox)
 {
     error_clear_last();
     $result = \imap_createmailbox($imap_stream, $mailbox);
@@ -170,7 +170,7 @@ function imap_createmailbox($imap_stream, string $mailbox): void
  * @throws ImapException
  *
  */
-function imap_deletemailbox($imap_stream, string $mailbox): void
+function imap_deletemailbox($imap_stream, string $mailbox)
 {
     error_clear_last();
     $result = \imap_deletemailbox($imap_stream, $mailbox);
@@ -193,7 +193,7 @@ function imap_deletemailbox($imap_stream, string $mailbox): void
  * @throws ImapException
  *
  */
-function imap_gc($imap_stream, int $caches): void
+function imap_gc($imap_stream, int $caches)
 {
     error_clear_last();
     $result = \imap_gc($imap_stream, $caches);
@@ -457,7 +457,7 @@ function imap_headerinfo($imap_stream, int $msg_number, int $fromlength = 0, int
  * @throws ImapException
  *
  */
-function imap_mail_copy($imap_stream, string $msglist, string $mailbox, int $options = 0): void
+function imap_mail_copy($imap_stream, string $msglist, string $mailbox, int $options = 0)
 {
     error_clear_last();
     $result = \imap_mail_copy($imap_stream, $msglist, $mailbox, $options);
@@ -488,7 +488,7 @@ function imap_mail_copy($imap_stream, string $msglist, string $mailbox, int $opt
  * @throws ImapException
  *
  */
-function imap_mail_move($imap_stream, string $msglist, string $mailbox, int $options = 0): void
+function imap_mail_move($imap_stream, string $msglist, string $mailbox, int $options = 0)
 {
     error_clear_last();
     $result = \imap_mail_move($imap_stream, $msglist, $mailbox, $options);
@@ -518,7 +518,7 @@ function imap_mail_move($imap_stream, string $msglist, string $mailbox, int $opt
  * @throws ImapException
  *
  */
-function imap_mail(string $to, string $subject, string $message, string $additional_headers = null, string $cc = null, string $bcc = null, string $rpath = null): void
+function imap_mail(string $to, string $subject, string $message, string $additional_headers = null, string $cc = null, string $bcc = null, string $rpath = null)
 {
     error_clear_last();
     $result = \imap_mail($to, $subject, $message, $additional_headers, $cc, $bcc, $rpath);
@@ -835,7 +835,7 @@ function imap_num_msg($imap_stream): int
  * @throws ImapException
  *
  */
-function imap_open(string $mailbox, string $username, string $password, int $options = 0, int $n_retries = 0, ?array $params = null)
+function imap_open(string $mailbox, string $username, string $password, int $options = 0, int $n_retries = 0, $params = null)
 {
     error_clear_last();
     $result = \imap_open($mailbox, $username, $password, $options, $n_retries, $params);
@@ -860,7 +860,7 @@ function imap_open(string $mailbox, string $username, string $password, int $opt
  * @throws ImapException
  *
  */
-function imap_renamemailbox($imap_stream, string $old_mbox, string $new_mbox): void
+function imap_renamemailbox($imap_stream, string $old_mbox, string $new_mbox)
 {
     error_clear_last();
     $result = \imap_renamemailbox($imap_stream, $old_mbox, $new_mbox);
@@ -903,7 +903,7 @@ function imap_renamemailbox($imap_stream, string $old_mbox, string $new_mbox): v
  * @throws ImapException
  *
  */
-function imap_savebody($imap_stream, $file, int $msg_number, string $part_number = "", int $options = 0): void
+function imap_savebody($imap_stream, $file, int $msg_number, string $part_number = "", int $options = 0)
 {
     error_clear_last();
     $result = \imap_savebody($imap_stream, $file, $msg_number, $part_number, $options);
@@ -924,7 +924,7 @@ function imap_savebody($imap_stream, $file, int $msg_number, string $part_number
  * @throws ImapException
  *
  */
-function imap_set_quota($imap_stream, string $quota_root, int $quota_limit): void
+function imap_set_quota($imap_stream, string $quota_root, int $quota_limit)
 {
     error_clear_last();
     $result = \imap_set_quota($imap_stream, $quota_root, $quota_limit);
@@ -947,7 +947,7 @@ function imap_set_quota($imap_stream, string $quota_root, int $quota_limit): voi
  * @throws ImapException
  *
  */
-function imap_setacl($imap_stream, string $mailbox, string $id, string $rights): void
+function imap_setacl($imap_stream, string $mailbox, string $id, string $rights)
 {
     error_clear_last();
     $result = \imap_setacl($imap_stream, $mailbox, $id, $rights);
@@ -983,7 +983,7 @@ function imap_setacl($imap_stream, string $mailbox, string $id, string $rights):
  * @throws ImapException
  *
  */
-function imap_setflag_full($imap_stream, string $sequence, string $flag, int $options = NIL): void
+function imap_setflag_full($imap_stream, string $sequence, string $flag, int $options = NIL)
 {
     error_clear_last();
     $result = \imap_setflag_full($imap_stream, $sequence, $flag, $options);
@@ -1003,7 +1003,7 @@ function imap_setflag_full($imap_stream, string $sequence, string $flag, int $op
  * @throws ImapException
  *
  */
-function imap_subscribe($imap_stream, string $mailbox): void
+function imap_subscribe($imap_stream, string $mailbox)
 {
     error_clear_last();
     $result = \imap_subscribe($imap_stream, $mailbox);
@@ -1089,7 +1089,7 @@ function imap_timeout(int $timeout_type, int $timeout = -1)
  * @throws ImapException
  *
  */
-function imap_undelete($imap_stream, int $msg_number, int $flags = 0): void
+function imap_undelete($imap_stream, int $msg_number, int $flags = 0)
 {
     error_clear_last();
     $result = \imap_undelete($imap_stream, $msg_number, $flags);
@@ -1109,7 +1109,7 @@ function imap_undelete($imap_stream, int $msg_number, int $flags = 0): void
  * @throws ImapException
  *
  */
-function imap_unsubscribe($imap_stream, string $mailbox): void
+function imap_unsubscribe($imap_stream, string $mailbox)
 {
     error_clear_last();
     $result = \imap_unsubscribe($imap_stream, $mailbox);

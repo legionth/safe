@@ -101,7 +101,7 @@ use Safe\Exceptions\Oci8Exception;
  * @throws Oci8Exception
  *
  */
-function oci_bind_array_by_name($statement, string $name, array &$var_array, int $max_table_length, int $max_item_length = -1, int $type = SQLT_AFC): void
+function oci_bind_array_by_name($statement, string $name, array &$var_array, int $max_table_length, int $max_item_length = -1, int $type = SQLT_AFC)
 {
     error_clear_last();
     $result = \oci_bind_array_by_name($statement, $name, $var_array, $max_table_length, $max_item_length, $type);
@@ -307,7 +307,7 @@ function oci_bind_array_by_name($statement, string $name, array &$var_array, int
  * @throws Oci8Exception
  *
  */
-function oci_bind_by_name($statement, string $bv_name, &$variable, int $maxlength = -1, int $type = SQLT_CHR): void
+function oci_bind_by_name($statement, string $bv_name, &$variable, int $maxlength = -1, int $type = SQLT_CHR)
 {
     error_clear_last();
     $result = \oci_bind_by_name($statement, $bv_name, $variable, $maxlength, $type);
@@ -325,7 +325,7 @@ function oci_bind_by_name($statement, string $bv_name, &$variable, int $maxlengt
  * @throws Oci8Exception
  *
  */
-function oci_cancel($statement): void
+function oci_cancel($statement)
 {
     error_clear_last();
     $result = \oci_cancel($statement);
@@ -350,7 +350,7 @@ function oci_cancel($statement): void
  * @throws Oci8Exception
  *
  */
-function oci_close($connection): void
+function oci_close($connection)
 {
     error_clear_last();
     $result = \oci_close($connection);
@@ -382,7 +382,7 @@ function oci_close($connection): void
  * @throws Oci8Exception
  *
  */
-function oci_commit($connection): void
+function oci_commit($connection)
 {
     error_clear_last();
     $result = \oci_commit($connection);
@@ -534,7 +534,7 @@ function oci_connect(string $username, string $password, string $connection_stri
  * @throws Oci8Exception
  *
  */
-function oci_define_by_name($statement, string $column_name, &$variable, int $type = SQLT_CHR): void
+function oci_define_by_name($statement, string $column_name, &$variable, int $type = SQLT_CHR)
 {
     error_clear_last();
     $result = \oci_define_by_name($statement, $column_name, $variable, $type);
@@ -621,7 +621,7 @@ function oci_define_by_name($statement, string $column_name, &$variable, int $ty
  * @throws Oci8Exception
  *
  */
-function oci_execute($statement, int $mode = OCI_COMMIT_ON_SUCCESS): void
+function oci_execute($statement, int $mode = OCI_COMMIT_ON_SUCCESS)
 {
     error_clear_last();
     $result = \oci_execute($statement, $mode);
@@ -723,7 +723,7 @@ function oci_execute($statement, int $mode = OCI_COMMIT_ON_SUCCESS): void
  * @throws Oci8Exception
  *
  */
-function oci_fetch_all($statement, ?array &$output, int $skip = 0, int $maxrows = -1, int $flags = OCI_FETCHSTATEMENT_BY_COLUMN + OCI_ASSOC): int
+function oci_fetch_all($statement, &$output, int $skip = 0, int $maxrows = -1, int $flags = OCI_FETCHSTATEMENT_BY_COLUMN + OCI_ASSOC): int
 {
     error_clear_last();
     $result = \oci_fetch_all($statement, $output, $skip, $maxrows, $flags);
@@ -871,7 +871,7 @@ function oci_field_type($statement, $field)
  * @throws Oci8Exception
  *
  */
-function oci_free_descriptor($descriptor): void
+function oci_free_descriptor($descriptor)
 {
     error_clear_last();
     $result = \oci_free_descriptor($descriptor);
@@ -890,7 +890,7 @@ function oci_free_descriptor($descriptor): void
  * @throws Oci8Exception
  *
  */
-function oci_free_statement($statement): void
+function oci_free_statement($statement)
 {
     error_clear_last();
     $result = \oci_free_statement($statement);
@@ -1303,7 +1303,7 @@ function oci_result($statement, $field): string
  * @throws Oci8Exception
  *
  */
-function oci_rollback($connection): void
+function oci_rollback($connection)
 {
     error_clear_last();
     $result = \oci_rollback($connection);
@@ -1353,7 +1353,7 @@ function oci_server_version($connection): string
  * @throws Oci8Exception
  *
  */
-function oci_set_action($connection, string $action_name): void
+function oci_set_action($connection, string $action_name)
 {
     error_clear_last();
     $result = \oci_set_action($connection, $action_name);
@@ -1395,7 +1395,7 @@ function oci_set_action($connection, string $action_name): void
  * @throws Oci8Exception
  *
  */
-function oci_set_call_timeout($connection, int $time_out): void
+function oci_set_call_timeout($connection, int $time_out)
 {
     error_clear_last();
     $result = \oci_set_call_timeout($connection, $time_out);
@@ -1430,7 +1430,7 @@ function oci_set_call_timeout($connection, int $time_out): void
  * @throws Oci8Exception
  *
  */
-function oci_set_client_identifier($connection, string $client_identifier): void
+function oci_set_client_identifier($connection, string $client_identifier)
 {
     error_clear_last();
     $result = \oci_set_client_identifier($connection, $client_identifier);
@@ -1459,7 +1459,7 @@ function oci_set_client_identifier($connection, string $client_identifier): void
  * @throws Oci8Exception
  *
  */
-function oci_set_client_info($connection, string $client_info): void
+function oci_set_client_info($connection, string $client_info)
 {
     error_clear_last();
     $result = \oci_set_client_info($connection, $client_info);
@@ -1489,7 +1489,7 @@ function oci_set_client_info($connection, string $client_info): void
  * @throws Oci8Exception
  *
  */
-function oci_set_db_operation($connection, string $dbop): void
+function oci_set_db_operation($connection, string $dbop)
 {
     error_clear_last();
     $result = \oci_set_db_operation($connection, $dbop);
@@ -1523,7 +1523,7 @@ function oci_set_db_operation($connection, string $dbop): void
  * @throws Oci8Exception
  *
  */
-function oci_set_edition(string $edition): void
+function oci_set_edition(string $edition)
 {
     error_clear_last();
     $result = \oci_set_edition($edition);
@@ -1554,7 +1554,7 @@ function oci_set_edition(string $edition): void
  * @throws Oci8Exception
  *
  */
-function oci_set_module_name($connection, string $module_name): void
+function oci_set_module_name($connection, string $module_name)
 {
     error_clear_last();
     $result = \oci_set_module_name($connection, $module_name);
@@ -1618,7 +1618,7 @@ function oci_set_module_name($connection, string $module_name): void
  * @throws Oci8Exception
  *
  */
-function oci_set_prefetch($statement, int $rows): void
+function oci_set_prefetch($statement, int $rows)
 {
     error_clear_last();
     $result = \oci_set_prefetch($statement, $rows);
@@ -1698,24 +1698,4 @@ function oci_statement_type($statement): string
         throw Oci8Exception::createFromPhpError();
     }
     return $result;
-}
-
-
-/**
- * Unregister the user-defined callback function registered to connection
- * by oci_register_taf_callback. See
- * OCI8 Transparent Application Failover (TAF) Support
- * for information.
- *
- * @param resource $connection An Oracle connection identifier.
- * @throws Oci8Exception
- *
- */
-function oci_unregister_taf_callback($connection): void
-{
-    error_clear_last();
-    $result = \oci_unregister_taf_callback($connection);
-    if ($result === false) {
-        throw Oci8Exception::createFromPhpError();
-    }
 }

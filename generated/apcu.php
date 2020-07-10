@@ -36,7 +36,7 @@ function apcu_cache_info(bool $limited = false): array
  * @throws ApcuException
  *
  */
-function apcu_cas(string $key, int $old, int $new): void
+function apcu_cas(string $key, int $old, int $new)
 {
     error_clear_last();
     $result = \apcu_cas($key, $old, $new);
@@ -58,7 +58,7 @@ function apcu_cas(string $key, int $old, int $new): void
  * @throws ApcuException
  *
  */
-function apcu_dec(string $key, int $step = 1, ?bool &$success = null, int $ttl = 0): int
+function apcu_dec(string $key, int $step = 1, &$success = null, int $ttl = 0): int
 {
     error_clear_last();
     $result = \apcu_dec($key, $step, $success, $ttl);
@@ -81,7 +81,7 @@ function apcu_dec(string $key, int $step = 1, ?bool &$success = null, int $ttl =
  * @throws ApcuException
  *
  */
-function apcu_inc(string $key, int $step = 1, ?bool &$success = null, int $ttl = 0): int
+function apcu_inc(string $key, int $step = 1, &$success = null, int $ttl = 0): int
 {
     error_clear_last();
     $result = \apcu_inc($key, $step, $success, $ttl);

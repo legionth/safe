@@ -19,7 +19,7 @@ use Safe\Exceptions\OutcontrolException;
  * @throws OutcontrolException
  *
  */
-function ob_end_clean(): void
+function ob_end_clean()
 {
     error_clear_last();
     $result = \ob_end_clean();
@@ -45,7 +45,7 @@ function ob_end_clean(): void
  * @throws OutcontrolException
  *
  */
-function ob_end_flush(): void
+function ob_end_flush()
 {
     error_clear_last();
     $result = \ob_end_flush();
@@ -70,7 +70,7 @@ function ob_end_flush(): void
  * @throws OutcontrolException
  *
  */
-function output_add_rewrite_var(string $name, string $value): void
+function output_add_rewrite_var(string $name, string $value)
 {
     error_clear_last();
     $result = \output_add_rewrite_var($name, $value);
@@ -88,7 +88,7 @@ function output_add_rewrite_var(string $name, string $value): void
  * @throws OutcontrolException
  *
  */
-function output_reset_rewrite_vars(): void
+function output_reset_rewrite_vars()
 {
     error_clear_last();
     $result = \output_reset_rewrite_vars();

@@ -28,7 +28,7 @@ use Safe\Exceptions\MiscException;
  * @throws MiscException
  *
  */
-function define(string $name, $value, bool $case_insensitive = false): void
+function define(string $name, $value, bool $case_insensitive = false)
 {
     error_clear_last();
     $result = \define($name, $value, $case_insensitive);
@@ -92,45 +92,6 @@ function highlight_string(string $str, bool $return = false)
 }
 
 
-/**
- * Convert string from one codepage to another.
- *
- * @param int|string $in_codepage The codepage of the subject string.
- * Either the codepage name or identifier.
- * @param int|string $out_codepage The codepage to convert the subject string to.
- * Either the codepage name or identifier.
- * @param string $subject The string to convert.
- * @return string The subject string converted to
- * out_codepage.
- * @throws MiscException
- *
- */
-function sapi_windows_cp_conv($in_codepage, $out_codepage, string $subject): string
-{
-    error_clear_last();
-    $result = \sapi_windows_cp_conv($in_codepage, $out_codepage, $subject);
-    if ($result === null) {
-        throw MiscException::createFromPhpError();
-    }
-    return $result;
-}
-
-
-/**
- * Set the codepage of the current process.
- *
- * @param int $cp A codepage identifier.
- * @throws MiscException
- *
- */
-function sapi_windows_cp_set(int $cp): void
-{
-    error_clear_last();
-    $result = \sapi_windows_cp_set($cp);
-    if ($result === false) {
-        throw MiscException::createFromPhpError();
-    }
-}
 
 
 /**
@@ -144,7 +105,7 @@ function sapi_windows_cp_set(int $cp): void
  * @throws MiscException
  *
  */
-function sapi_windows_generate_ctrl_event(int $event, int $pid = 0): void
+function sapi_windows_generate_ctrl_event(int $event, int $pid = 0)
 {
     error_clear_last();
     $result = \sapi_windows_generate_ctrl_event($event, $pid);
@@ -153,35 +114,6 @@ function sapi_windows_generate_ctrl_event(int $event, int $pid = 0): void
     }
 }
 
-
-/**
- * If enable is omitted, the function returns TRUE if the stream stream has VT100 control codes enabled, FALSE otherwise.
- *
- * If enable is specified, the function will try to enable or disable the VT100 features of the stream stream.
- * If the feature has been successfully enabled (or disabled).
- *
- * At startup, PHP tries to enable the VT100 feature of the STDOUT/STDERR streams. By the way, if those streams are redirected to a file, the VT100 features may not be enabled.
- *
- * If VT100 support is enabled, it is possible to use control sequences as they are known from the VT100 terminal.
- * They allow the modification of the terminal's output. On Windows these sequences are called Console Virtual Terminal Sequences.
- *
- * @param resource $stream The stream on which the function will operate.
- * @param bool $enable If specified, the VT100 feature will be enabled (if TRUE) or disabled (if FALSE).
- * @throws MiscException
- *
- */
-function sapi_windows_vt100_support($stream, bool $enable = null): void
-{
-    error_clear_last();
-    if ($enable !== null) {
-        $result = \sapi_windows_vt100_support($stream, $enable);
-    } else {
-        $result = \sapi_windows_vt100_support($stream);
-    }
-    if ($result === false) {
-        throw MiscException::createFromPhpError();
-    }
-}
 
 
 /**
@@ -256,7 +188,7 @@ function time_nanosleep(int $seconds, int $nanoseconds)
  * @throws MiscException
  *
  */
-function time_sleep_until(float $timestamp): void
+function time_sleep_until(float $timestamp)
 {
     error_clear_last();
     $result = \time_sleep_until($timestamp);

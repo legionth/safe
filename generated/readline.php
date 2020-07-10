@@ -11,7 +11,7 @@ use Safe\Exceptions\ReadlineException;
  * @throws ReadlineException
  *
  */
-function readline_add_history(string $line): void
+function readline_add_history(string $line)
 {
     error_clear_last();
     $result = \readline_add_history($line);
@@ -70,7 +70,7 @@ function readline_add_history(string $line): void
  * @throws ReadlineException
  *
  */
-function readline_callback_handler_install(string $prompt, callable $callback): void
+function readline_callback_handler_install(string $prompt, callable $callback)
 {
     error_clear_last();
     $result = \readline_callback_handler_install($prompt, $callback);
@@ -86,7 +86,7 @@ function readline_callback_handler_install(string $prompt, callable $callback): 
  * @throws ReadlineException
  *
  */
-function readline_clear_history(): void
+function readline_clear_history()
 {
     error_clear_last();
     $result = \readline_clear_history();
@@ -105,7 +105,7 @@ function readline_clear_history(): void
  * @throws ReadlineException
  *
  */
-function readline_completion_function(callable $function): void
+function readline_completion_function(callable $function)
 {
     error_clear_last();
     $result = \readline_completion_function($function);
@@ -122,7 +122,7 @@ function readline_completion_function(callable $function): void
  * @throws ReadlineException
  *
  */
-function readline_read_history(string $filename = null): void
+function readline_read_history(string $filename = null)
 {
     error_clear_last();
     if ($filename !== null) {
@@ -143,7 +143,7 @@ function readline_read_history(string $filename = null): void
  * @throws ReadlineException
  *
  */
-function readline_write_history(string $filename = null): void
+function readline_write_history(string $filename = null)
 {
     error_clear_last();
     if ($filename !== null) {

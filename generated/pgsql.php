@@ -14,7 +14,7 @@ use Safe\Exceptions\PgsqlException;
  * @throws PgsqlException
  *
  */
-function pg_cancel_query($connection): void
+function pg_cancel_query($connection)
 {
     error_clear_last();
     $result = \pg_cancel_query($connection);
@@ -69,7 +69,7 @@ function pg_client_encoding($connection = null): string
  * @throws PgsqlException
  *
  */
-function pg_close($connection = null): void
+function pg_close($connection = null)
 {
     error_clear_last();
     if ($connection !== null) {
@@ -153,7 +153,7 @@ function pg_connect(string $connection_string, int $connect_type = null)
  * @throws PgsqlException
  *
  */
-function pg_connection_reset($connection): void
+function pg_connection_reset($connection)
 {
     error_clear_last();
     $result = \pg_connection_reset($connection);
@@ -213,7 +213,7 @@ function pg_convert($connection, string $table_name, array $assoc_array, int $op
  * @throws PgsqlException
  *
  */
-function pg_copy_from($connection, string $table_name, array $rows, string $delimiter = null, string $null_as = null): void
+function pg_copy_from($connection, string $table_name, array $rows, string $delimiter = null, string $null_as = null)
 {
     error_clear_last();
     if ($null_as !== null) {
@@ -355,7 +355,7 @@ function pg_delete($connection, string $table_name, array $assoc_array, int $opt
  * @throws PgsqlException
  *
  */
-function pg_end_copy($connection = null): void
+function pg_end_copy($connection = null)
 {
     error_clear_last();
     if ($connection !== null) {
@@ -533,7 +533,7 @@ function pg_flush($connection)
  * @throws PgsqlException
  *
  */
-function pg_free_result($result): void
+function pg_free_result($result)
 {
     error_clear_last();
     $result = \pg_free_result($result);
@@ -688,7 +688,7 @@ function pg_last_error($connection = null): string
  * @throws PgsqlException
  *
  */
-function pg_last_notice($connection, int $option = PGSQL_NOTICE_LAST): string
+function pg_last_notice($connection, int $option = 1): string
 {
     error_clear_last();
     $result = \pg_last_notice($connection, $option);
@@ -751,7 +751,7 @@ function pg_last_oid($result): string
  * @throws PgsqlException
  *
  */
-function pg_lo_close($large_object): void
+function pg_lo_close($large_object)
 {
     error_clear_last();
     $result = \pg_lo_close($large_object);
@@ -779,7 +779,7 @@ function pg_lo_close($large_object): void
  * @throws PgsqlException
  *
  */
-function pg_lo_export($connection = null, int $oid = null, string $pathname = null): void
+function pg_lo_export($connection = null, int $oid = null, string $pathname = null)
 {
     error_clear_last();
     if ($pathname !== null) {
@@ -934,7 +934,7 @@ function pg_lo_read($large_object, int $len = 8192): string
  * @throws PgsqlException
  *
  */
-function pg_lo_seek($large_object, int $offset, int $whence = PGSQL_SEEK_CUR): void
+function pg_lo_seek($large_object, int $offset, int $whence = PGSQL_SEEK_CUR)
 {
     error_clear_last();
     $result = \pg_lo_seek($large_object, $offset, $whence);
@@ -956,7 +956,7 @@ function pg_lo_seek($large_object, int $offset, int $whence = PGSQL_SEEK_CUR): v
  * @throws PgsqlException
  *
  */
-function pg_lo_truncate($large_object, int $size): void
+function pg_lo_truncate($large_object, int $size)
 {
     error_clear_last();
     $result = \pg_lo_truncate($large_object, $size);
@@ -981,7 +981,7 @@ function pg_lo_truncate($large_object, int $size): void
  * @throws PgsqlException
  *
  */
-function pg_lo_unlink($connection, int $oid): void
+function pg_lo_unlink($connection, int $oid)
 {
     error_clear_last();
     $result = \pg_lo_unlink($connection, $oid);
@@ -1200,7 +1200,7 @@ function pg_pconnect(string $connection_string, int $connect_type = null)
  * @throws PgsqlException
  *
  */
-function pg_ping($connection = null): void
+function pg_ping($connection = null)
 {
     error_clear_last();
     if ($connection !== null) {
@@ -1319,7 +1319,7 @@ function pg_prepare($connection = null, string $stmtname = null, string $query =
  * @throws PgsqlException
  *
  */
-function pg_put_line($connection = null, string $data = null): void
+function pg_put_line($connection = null, string $data = null)
 {
     error_clear_last();
     if ($data !== null) {
@@ -1489,7 +1489,7 @@ function pg_query($connection = null, string $query = null)
  * @throws PgsqlException
  *
  */
-function pg_result_error_field($result, int $fieldcode): ?string
+function pg_result_error_field($result, int $fieldcode)
 {
     error_clear_last();
     $result = \pg_result_error_field($result, $fieldcode);
@@ -1512,7 +1512,7 @@ function pg_result_error_field($result, int $fieldcode): ?string
  * @throws PgsqlException
  *
  */
-function pg_result_seek($result, int $offset): void
+function pg_result_seek($result, int $offset)
 {
     error_clear_last();
     $result = \pg_result_seek($result, $offset);
@@ -1597,7 +1597,7 @@ function pg_select($connection, string $table_name, array $assoc_array, int $opt
  * @throws PgsqlException
  *
  */
-function pg_send_execute($connection, string $stmtname, array $params): void
+function pg_send_execute($connection, string $stmtname, array $params)
 {
     error_clear_last();
     $result = \pg_send_execute($connection, $stmtname, $params);
@@ -1631,7 +1631,7 @@ function pg_send_execute($connection, string $stmtname, array $params): void
  * @throws PgsqlException
  *
  */
-function pg_send_prepare($connection, string $stmtname, string $query): void
+function pg_send_prepare($connection, string $stmtname, string $query)
 {
     error_clear_last();
     $result = \pg_send_prepare($connection, $stmtname, $query);
@@ -1662,7 +1662,7 @@ function pg_send_prepare($connection, string $stmtname, string $query): void
  * @throws PgsqlException
  *
  */
-function pg_send_query_params($connection, string $query, array $params): void
+function pg_send_query_params($connection, string $query, array $params)
 {
     error_clear_last();
     $result = \pg_send_query_params($connection, $query, $params);
@@ -1696,7 +1696,7 @@ function pg_send_query_params($connection, string $query, array $params): void
  * @throws PgsqlException
  *
  */
-function pg_send_query($connection, string $query): void
+function pg_send_query($connection, string $query)
 {
     error_clear_last();
     $result = \pg_send_query($connection, $query);
@@ -1749,7 +1749,7 @@ function pg_socket($connection)
  * @throws PgsqlException
  *
  */
-function pg_trace(string $pathname, string $mode = "w", $connection = null): void
+function pg_trace(string $pathname, string $mode = "w", $connection = null)
 {
     error_clear_last();
     if ($connection !== null) {

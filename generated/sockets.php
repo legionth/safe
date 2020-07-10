@@ -45,44 +45,6 @@ function socket_accept($socket)
 }
 
 
-/**
- * Create a Socket resource, and bind it to the provided AddrInfo resource.  The return
- * value of this function may be used with socket_listen.
- *
- * @param resource $addr Resource created from socket_addrinfo_lookup.
- * @return resource Returns a Socket resource on success.
- * @throws SocketsException
- *
- */
-function socket_addrinfo_bind($addr)
-{
-    error_clear_last();
-    $result = \socket_addrinfo_bind($addr);
-    if ($result === null) {
-        throw SocketsException::createFromPhpError();
-    }
-    return $result;
-}
-
-
-/**
- * Create a Socket resource, and connect it to the provided AddrInfo resource.  The return
- * value of this function may be used with the rest of the socket functions.
- *
- * @param resource $addr Resource created from socket_addrinfo_lookup
- * @return resource Returns a Socket resource on success.
- * @throws SocketsException
- *
- */
-function socket_addrinfo_connect($addr)
-{
-    error_clear_last();
-    $result = \socket_addrinfo_connect($addr);
-    if ($result === null) {
-        throw SocketsException::createFromPhpError();
-    }
-    return $result;
-}
 
 
 /**
@@ -105,7 +67,7 @@ function socket_addrinfo_connect($addr)
  * @throws SocketsException
  *
  */
-function socket_bind($socket, string $address, int $port = 0): void
+function socket_bind($socket, string $address, int $port = 0)
 {
     error_clear_last();
     $result = \socket_bind($socket, $address, $port);
@@ -135,7 +97,7 @@ function socket_bind($socket, string $address, int $port = 0): void
  * @throws SocketsException
  *
  */
-function socket_connect($socket, string $address, int $port = 0): void
+function socket_connect($socket, string $address, int $port = 0)
 {
     error_clear_last();
     $result = \socket_connect($socket, $address, $port);
@@ -203,7 +165,7 @@ function socket_create_listen(int $port, int $backlog = 128)
  * @throws SocketsException
  *
  */
-function socket_create_pair(int $domain, int $type, int $protocol, ?iterable &$fd): void
+function socket_create_pair(int $domain, int $type, int $protocol, &$fd)
 {
     error_clear_last();
     $result = \socket_create_pair($domain, $type, $protocol, $fd);
@@ -336,7 +298,7 @@ function socket_get_option($socket, int $level, int $optname)
  * @throws SocketsException
  *
  */
-function socket_getpeername($socket, string &$address, ?int &$port = null): void
+function socket_getpeername($socket, string &$address, &$port = null)
 {
     error_clear_last();
     $result = \socket_getpeername($socket, $address, $port);
@@ -366,7 +328,7 @@ function socket_getpeername($socket, string &$address, ?int &$port = null): void
  * @throws SocketsException
  *
  */
-function socket_getsockname($socket, ?string &$addr, ?int &$port = null): void
+function socket_getsockname($socket, &$addr, &$port = null)
 {
     error_clear_last();
     $result = \socket_getsockname($socket, $addr, $port);
@@ -423,7 +385,7 @@ function socket_import_stream($stream)
  * @throws SocketsException
  *
  */
-function socket_listen($socket, int $backlog = 0): void
+function socket_listen($socket, int $backlog = 0)
 {
     error_clear_last();
     $result = \socket_listen($socket, $backlog);
@@ -641,7 +603,7 @@ function socket_sendto($socket, string $buf, int $len, int $flags, string $addr,
  * @throws SocketsException
  *
  */
-function socket_set_block($socket): void
+function socket_set_block($socket)
 {
     error_clear_last();
     $result = \socket_set_block($socket);
@@ -666,7 +628,7 @@ function socket_set_block($socket): void
  * @throws SocketsException
  *
  */
-function socket_set_nonblock($socket): void
+function socket_set_nonblock($socket)
 {
     error_clear_last();
     $result = \socket_set_nonblock($socket);
@@ -698,7 +660,7 @@ function socket_set_nonblock($socket): void
  * @throws SocketsException
  *
  */
-function socket_set_option($socket, int $level, int $optname, $optval): void
+function socket_set_option($socket, int $level, int $optname, $optval)
 {
     error_clear_last();
     $result = \socket_set_option($socket, $level, $optname, $optval);
@@ -743,7 +705,7 @@ function socket_set_option($socket, int $level, int $optname, $optval): void
  * @throws SocketsException
  *
  */
-function socket_shutdown($socket, int $how = 2): void
+function socket_shutdown($socket, int $how = 2)
 {
     error_clear_last();
     $result = \socket_shutdown($socket, $how);
@@ -833,7 +795,7 @@ function socket_wsaprotocol_info_import(string $info_id)
  * @throws SocketsException
  *
  */
-function socket_wsaprotocol_info_release(string $info_id): void
+function socket_wsaprotocol_info_release(string $info_id)
 {
     error_clear_last();
     $result = \socket_wsaprotocol_info_release($info_id);

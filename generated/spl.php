@@ -99,7 +99,7 @@ function class_uses($class, bool $autoload = true): array
  * @throws SplException
  *
  */
-function spl_autoload_register(callable $autoload_function = null, bool $throw = true, bool $prepend = false): void
+function spl_autoload_register(callable $autoload_function = null, bool $throw = true, bool $prepend = false)
 {
     error_clear_last();
     if ($prepend !== false) {
@@ -129,7 +129,7 @@ function spl_autoload_register(callable $autoload_function = null, bool $throw =
  * @throws SplException
  *
  */
-function spl_autoload_unregister($autoload_function): void
+function spl_autoload_unregister($autoload_function)
 {
     error_clear_last();
     $result = \spl_autoload_unregister($autoload_function);

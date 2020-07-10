@@ -12,7 +12,7 @@ use Safe\Exceptions\ShmopException;
  * @throws ShmopException
  *
  */
-function shmop_delete($shmid): void
+function shmop_delete($shmid)
 {
     error_clear_last();
     $result = \shmop_delete($shmid);

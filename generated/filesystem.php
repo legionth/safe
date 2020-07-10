@@ -16,7 +16,7 @@ use Safe\Exceptions\FilesystemException;
  * @throws FilesystemException
  *
  */
-function chgrp(string $filename, $group): void
+function chgrp(string $filename, $group)
 {
     error_clear_last();
     $result = \chgrp($filename, $group);
@@ -58,7 +58,7 @@ function chgrp(string $filename, $group): void
  *
  *
  */
-function chmod(string $filename, int $mode): void
+function chmod(string $filename, int $mode)
 {
     error_clear_last();
     $result = \chmod($filename, $mode);
@@ -78,7 +78,7 @@ function chmod(string $filename, int $mode): void
  * @throws FilesystemException
  *
  */
-function chown(string $filename, $user): void
+function chown(string $filename, $user)
 {
     error_clear_last();
     $result = \chown($filename, $user);
@@ -105,7 +105,7 @@ function chown(string $filename, $user): void
  * @throws FilesystemException
  *
  */
-function copy(string $source, string $dest, $context = null): void
+function copy(string $source, string $dest, $context = null)
 {
     error_clear_last();
     if ($context !== null) {
@@ -172,7 +172,7 @@ function disk_total_space(string $directory): float
  * @throws FilesystemException
  *
  */
-function fclose($handle): void
+function fclose($handle)
 {
     error_clear_last();
     $result = \fclose($handle);
@@ -193,7 +193,7 @@ function fclose($handle): void
  * @throws FilesystemException
  *
  */
-function fflush($handle): void
+function fflush($handle)
 {
     error_clear_last();
     $result = \fflush($handle);
@@ -570,7 +570,7 @@ function filesize(string $filename): int
  * @throws FilesystemException
  *
  */
-function flock($handle, int $operation, ?int &$wouldblock = null): void
+function flock($handle, int $operation, &$wouldblock = null)
 {
     error_clear_last();
     $result = \flock($handle, $operation, $wouldblock);
@@ -893,7 +893,7 @@ function fread($handle, int $length): string
  * @throws FilesystemException
  *
  */
-function ftruncate($handle, int $size): void
+function ftruncate($handle, int $size)
 {
     error_clear_last();
     $result = \ftruncate($handle, $size);
@@ -1045,7 +1045,7 @@ function glob(string $pattern, int $flags = 0): array
  * @throws FilesystemException
  *
  */
-function lchgrp(string $filename, $group): void
+function lchgrp(string $filename, $group)
 {
     error_clear_last();
     $result = \lchgrp($filename, $group);
@@ -1066,7 +1066,7 @@ function lchgrp(string $filename, $group): void
  * @throws FilesystemException
  *
  */
-function lchown(string $filename, $user): void
+function lchown(string $filename, $user)
 {
     error_clear_last();
     $result = \lchown($filename, $user);
@@ -1084,7 +1084,7 @@ function lchown(string $filename, $user): void
  * @throws FilesystemException
  *
  */
-function link(string $target, string $link): void
+function link(string $target, string $link)
 {
     error_clear_last();
     $result = \link($target, $link);
@@ -1114,7 +1114,7 @@ function link(string $target, string $link): void
  * @throws FilesystemException
  *
  */
-function mkdir(string $pathname, int $mode = 0777, bool $recursive = false, $context = null): void
+function mkdir(string $pathname, int $mode = 0777, bool $recursive = false, $context = null)
 {
     error_clear_last();
     if ($context !== null) {
@@ -1302,7 +1302,7 @@ function realpath(string $path): string
  * @throws FilesystemException
  *
  */
-function rename(string $oldname, string $newname, $context = null): void
+function rename(string $oldname, string $newname, $context = null)
 {
     error_clear_last();
     if ($context !== null) {
@@ -1325,7 +1325,7 @@ function rename(string $oldname, string $newname, $context = null): void
  * @throws FilesystemException
  *
  */
-function rewind($handle): void
+function rewind($handle)
 {
     error_clear_last();
     $result = \rewind($handle);
@@ -1345,7 +1345,7 @@ function rewind($handle): void
  * @throws FilesystemException
  *
  */
-function rmdir(string $dirname, $context = null): void
+function rmdir(string $dirname, $context = null)
 {
     error_clear_last();
     if ($context !== null) {
@@ -1369,7 +1369,7 @@ function rmdir(string $dirname, $context = null): void
  * @throws FilesystemException
  *
  */
-function symlink(string $target, string $link): void
+function symlink(string $target, string $link)
 {
     error_clear_last();
     $result = \symlink($target, $link);
@@ -1446,7 +1446,7 @@ function tmpfile()
  * @throws FilesystemException
  *
  */
-function touch(string $filename, int $time = null, int $atime = null): void
+function touch(string $filename, int $time = null, int $atime = null)
 {
     error_clear_last();
     if ($atime !== null) {
@@ -1472,7 +1472,7 @@ function touch(string $filename, int $time = null, int $atime = null): void
  * @throws FilesystemException
  *
  */
-function unlink(string $filename, $context = null): void
+function unlink(string $filename, $context = null)
 {
     error_clear_last();
     if ($context !== null) {

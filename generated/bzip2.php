@@ -12,7 +12,7 @@ use Safe\Exceptions\Bzip2Exception;
  * @throws Bzip2Exception
  *
  */
-function bzclose($bz): void
+function bzclose($bz)
 {
     error_clear_last();
     $result = \bzclose($bz);
@@ -31,7 +31,7 @@ function bzclose($bz): void
  * @throws Bzip2Exception
  *
  */
-function bzflush($bz): void
+function bzflush($bz)
 {
     error_clear_last();
     $result = \bzflush($bz);

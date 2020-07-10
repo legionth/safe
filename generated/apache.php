@@ -75,7 +75,7 @@ function apache_request_headers(): array
  * @throws ApacheException
  *
  */
-function apache_reset_timeout(): void
+function apache_reset_timeout()
 {
     error_clear_last();
     $result = \apache_reset_timeout();
@@ -114,7 +114,7 @@ function apache_response_headers(): array
  * @throws ApacheException
  *
  */
-function apache_setenv(string $variable, string $value, bool $walk_to_top = false): void
+function apache_setenv(string $variable, string $value, bool $walk_to_top = false)
 {
     error_clear_last();
     $result = \apache_setenv($variable, $value, $walk_to_top);
@@ -163,7 +163,7 @@ function getallheaders(): array
  * @throws ApacheException
  *
  */
-function virtual(string $filename): void
+function virtual(string $filename)
 {
     error_clear_last();
     $result = \virtual($filename);

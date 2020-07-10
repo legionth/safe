@@ -77,7 +77,7 @@ function gmp_import(string $data, int $word_size = 1, int $options = GMP_MSW_FIR
  * @throws GmpException
  *
  */
-function gmp_random_seed($seed): void
+function gmp_random_seed($seed)
 {
     error_clear_last();
     $result = \gmp_random_seed($seed);

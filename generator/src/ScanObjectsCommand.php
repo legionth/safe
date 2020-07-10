@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ScanObjectsCommand extends Command
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('scan-objects')
@@ -23,10 +23,10 @@ class ScanObjectsCommand extends Command
 
         $paths = $scanner->getMethodsPaths();
 
-        [
+        list(
             'functions' => $functions,
             'overloadedFunctions' => $overloadedFunctions
-        ] = $scanner->getMethods($paths);
+        ) = $scanner->getMethods($paths);
 
         foreach ($functions as $function) {
             $name = $function->getFunctionName();

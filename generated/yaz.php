@@ -47,7 +47,7 @@ use Safe\Exceptions\YazException;
  * @throws YazException
  *
  */
-function yaz_ccl_parse($id, string $query, ?array &$result): void
+function yaz_ccl_parse($id, string $query, &$result)
 {
     error_clear_last();
     $result = \yaz_ccl_parse($id, $query, $result);
@@ -64,7 +64,7 @@ function yaz_ccl_parse($id, string $query, ?array &$result): void
  * @throws YazException
  *
  */
-function yaz_close($id): void
+function yaz_close($id)
 {
     error_clear_last();
     $result = \yaz_close($id);
@@ -292,7 +292,7 @@ function yaz_connect(string $zurl, $options = null)
  * @throws YazException
  *
  */
-function yaz_database($id, string $databases): void
+function yaz_database($id, string $databases)
 {
     error_clear_last();
     $result = \yaz_database($id, $databases);
@@ -315,7 +315,7 @@ function yaz_database($id, string $databases): void
  * @throws YazException
  *
  */
-function yaz_element($id, string $elementset): void
+function yaz_element($id, string $elementset)
 {
     error_clear_last();
     $result = \yaz_element($id, $elementset);
@@ -335,7 +335,7 @@ function yaz_element($id, string $elementset): void
  * @throws YazException
  *
  */
-function yaz_present($id): void
+function yaz_present($id)
 {
     error_clear_last();
     $result = \yaz_present($id);
@@ -375,7 +375,7 @@ function yaz_present($id): void
  * @throws YazException
  *
  */
-function yaz_search($id, string $type, string $query): void
+function yaz_search($id, string $type, string $query)
 {
     error_clear_last();
     $result = \yaz_search($id, $type, $query);

@@ -15,7 +15,7 @@ use Safe\Exceptions\StreamException;
  * @throws StreamException
  *
  */
-function stream_context_set_params($stream_or_context, array $params): void
+function stream_context_set_params($stream_or_context, array $params)
 {
     error_clear_last();
     $result = \stream_context_set_params($stream_or_context, $params);
@@ -167,7 +167,7 @@ function stream_filter_prepend($stream, string $filtername, int $read_write = nu
  * @throws StreamException
  *
  */
-function stream_filter_register(string $filtername, string $classname): void
+function stream_filter_register(string $filtername, string $classname)
 {
     error_clear_last();
     $result = \stream_filter_register($filtername, $classname);
@@ -188,7 +188,7 @@ function stream_filter_register(string $filtername, string $classname): void
  * @throws StreamException
  *
  */
-function stream_filter_remove($stream_filter): void
+function stream_filter_remove($stream_filter)
 {
     error_clear_last();
     $result = \stream_filter_remove($stream_filter);
@@ -222,24 +222,6 @@ function stream_get_contents($handle, int $maxlength = -1, int $offset = -1): st
         throw StreamException::createFromPhpError();
     }
     return $result;
-}
-
-
-/**
- * Determines if stream stream refers to a valid terminal type device.
- * This is a more portable version of posix_isatty, since it works on Windows systems too.
- *
- * @param resource $stream
- * @throws StreamException
- *
- */
-function stream_isatty($stream): void
-{
-    error_clear_last();
-    $result = \stream_isatty($stream);
-    if ($result === false) {
-        throw StreamException::createFromPhpError();
-    }
 }
 
 
@@ -280,7 +262,7 @@ function stream_resolve_include_path(string $filename): string
  * @throws StreamException
  *
  */
-function stream_set_blocking($stream, bool $mode): void
+function stream_set_blocking($stream, bool $mode)
 {
     error_clear_last();
     $result = \stream_set_blocking($stream, $mode);
@@ -305,7 +287,7 @@ function stream_set_blocking($stream, bool $mode): void
  * @throws StreamException
  *
  */
-function stream_set_timeout($stream, int $seconds, int $microseconds = 0): void
+function stream_set_timeout($stream, int $seconds, int $microseconds = 0)
 {
     error_clear_last();
     $result = \stream_set_timeout($stream, $seconds, $microseconds);
@@ -331,7 +313,7 @@ function stream_set_timeout($stream, int $seconds, int $microseconds = 0): void
  * @throws StreamException
  *
  */
-function stream_socket_accept($server_socket, float $timeout = null, ?string &$peername = null)
+function stream_socket_accept($server_socket, float $timeout = null, &$peername = null)
 {
     error_clear_last();
     if ($peername !== null) {
@@ -520,7 +502,7 @@ function stream_socket_server(string $local_socket, int &$errno = null, string &
  * @throws StreamException
  *
  */
-function stream_socket_shutdown($stream, int $how): void
+function stream_socket_shutdown($stream, int $how)
 {
     error_clear_last();
     $result = \stream_socket_shutdown($stream, $how);
@@ -538,7 +520,7 @@ function stream_socket_shutdown($stream, int $how): void
  * @throws StreamException
  *
  */
-function stream_supports_lock($stream): void
+function stream_supports_lock($stream)
 {
     error_clear_last();
     $result = \stream_supports_lock($stream);
@@ -561,7 +543,7 @@ function stream_supports_lock($stream): void
  * @throws StreamException
  *
  */
-function stream_wrapper_register(string $protocol, string $classname, int $flags = 0): void
+function stream_wrapper_register(string $protocol, string $classname, int $flags = 0)
 {
     error_clear_last();
     $result = \stream_wrapper_register($protocol, $classname, $flags);
@@ -579,7 +561,7 @@ function stream_wrapper_register(string $protocol, string $classname, int $flags
  * @throws StreamException
  *
  */
-function stream_wrapper_restore(string $protocol): void
+function stream_wrapper_restore(string $protocol)
 {
     error_clear_last();
     $result = \stream_wrapper_restore($protocol);
@@ -599,7 +581,7 @@ function stream_wrapper_restore(string $protocol): void
  * @throws StreamException
  *
  */
-function stream_wrapper_unregister(string $protocol): void
+function stream_wrapper_unregister(string $protocol)
 {
     error_clear_last();
     $result = \stream_wrapper_unregister($protocol);

@@ -12,7 +12,7 @@ use Safe\Exceptions\UopzException;
  * @throws UopzException
  *
  */
-function uopz_extend(string $class, string $parent): void
+function uopz_extend(string $class, string $parent)
 {
     error_clear_last();
     $result = \uopz_extend($class, $parent);
@@ -30,7 +30,7 @@ function uopz_extend(string $class, string $parent): void
  * @throws UopzException
  *
  */
-function uopz_implement(string $class, string $interface): void
+function uopz_implement(string $class, string $interface)
 {
     error_clear_last();
     $result = \uopz_implement($class, $interface);

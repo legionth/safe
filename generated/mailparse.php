@@ -50,7 +50,7 @@ function mailparse_msg_extract_part_file($mimemail, $filename, callable $callbac
  * @throws MailparseException
  *
  */
-function mailparse_msg_free($mimemail): void
+function mailparse_msg_free($mimemail)
 {
     error_clear_last();
     $result = \mailparse_msg_free($mimemail);
@@ -92,7 +92,7 @@ function mailparse_msg_parse_file(string $filename)
  * @throws MailparseException
  *
  */
-function mailparse_msg_parse($mimemail, string $data): void
+function mailparse_msg_parse($mimemail, string $data)
 {
     error_clear_last();
     $result = \mailparse_msg_parse($mimemail, $data);
@@ -113,7 +113,7 @@ function mailparse_msg_parse($mimemail, string $data): void
  * @throws MailparseException
  *
  */
-function mailparse_stream_encode($sourcefp, $destfp, string $encoding): void
+function mailparse_stream_encode($sourcefp, $destfp, string $encoding)
 {
     error_clear_last();
     $result = \mailparse_stream_encode($sourcefp, $destfp, $encoding);

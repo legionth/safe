@@ -13,7 +13,7 @@ use Safe\Exceptions\RrdException;
  * @throws RrdException
  *
  */
-function rrd_create(string $filename, array $options): void
+function rrd_create(string $filename, array $options)
 {
     error_clear_last();
     $result = \rrd_create($filename, $options);

@@ -41,7 +41,7 @@ function msql_affected_rows($result): int
  * @throws MsqlException
  *
  */
-function msql_close($link_identifier = null): void
+function msql_close($link_identifier = null)
 {
     error_clear_last();
     if ($link_identifier !== null) {
@@ -108,7 +108,7 @@ function msql_connect(string $hostname = null)
  * @throws MsqlException
  *
  */
-function msql_create_db(string $database_name, $link_identifier = null): void
+function msql_create_db(string $database_name, $link_identifier = null)
 {
     error_clear_last();
     if ($link_identifier !== null) {
@@ -136,7 +136,7 @@ function msql_create_db(string $database_name, $link_identifier = null): void
  * @throws MsqlException
  *
  */
-function msql_data_seek($result, int $row_number): void
+function msql_data_seek($result, int $row_number)
 {
     error_clear_last();
     $result = \msql_data_seek($result, $row_number);
@@ -187,7 +187,7 @@ function msql_db_query(string $database, string $query, $link_identifier = null)
  * @throws MsqlException
  *
  */
-function msql_drop_db(string $database_name, $link_identifier = null): void
+function msql_drop_db(string $database_name, $link_identifier = null)
 {
     error_clear_last();
     if ($link_identifier !== null) {
@@ -262,7 +262,7 @@ function msql_field_name($result, int $field_offset): string
  * @throws MsqlException
  *
  */
-function msql_field_seek($result, int $field_offset): void
+function msql_field_seek($result, int $field_offset)
 {
     error_clear_last();
     $result = \msql_field_seek($result, $field_offset);
@@ -335,7 +335,7 @@ function msql_field_type($result, int $field_offset): string
  * @throws MsqlException
  *
  */
-function msql_free_result($result): void
+function msql_free_result($result)
 {
     error_clear_last();
     $result = \msql_free_result($result);
@@ -429,7 +429,7 @@ function msql_query(string $query, $link_identifier = null)
  * @throws MsqlException
  *
  */
-function msql_select_db(string $database_name, $link_identifier = null): void
+function msql_select_db(string $database_name, $link_identifier = null)
 {
     error_clear_last();
     if ($link_identifier !== null) {

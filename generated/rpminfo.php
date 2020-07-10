@@ -11,7 +11,7 @@ use Safe\Exceptions\RpminfoException;
  * @throws RpminfoException
  *
  */
-function rpmaddtag(int $tag): void
+function rpmaddtag(int $tag)
 {
     error_clear_last();
     $result = \rpmaddtag($tag);

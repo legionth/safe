@@ -16,7 +16,7 @@ class Parameter
      */
     private $type;
 
-    public function __construct(\SimpleXMLElement $parameter, ?PhpStanFunction $phpStanFunction)
+    public function __construct(\SimpleXMLElement $parameter, $phpStanFunction)
     {
         $this->parameter = $parameter;
         $phpStanParam = $phpStanFunction ? $phpStanFunction->getParameter($this->getParameter()) : null;
@@ -100,7 +100,7 @@ class Parameter
         return isset($this->parameter->initializer);
     }
 
-    public function getDefaultValue(): ?string
+    public function getDefaultValue()
     {
         if (!$this->hasDefaultValue()) {
             return null;
