@@ -50,8 +50,6 @@
             "generated/mbstring.php",
             "generated/misc.php",
             "generated/msql.php",
-            "generated/mssql.php",
-            "generated/mysql.php",
             "generated/mysqli.php",
             "generated/mysqlndMs.php",
             "generated/mysqlndQc.php",
@@ -101,7 +99,7 @@
         ]
     },
     "require": {
-        "php": ">=7.2"
+        "php": "7.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
